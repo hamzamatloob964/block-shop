@@ -11,14 +11,20 @@
       <span class="work-sub-title">We provided high-quality coding to create a more intuitive experience.</span>
     </div>
 
-    <div class="work-mask mt-12">
+    <div class="mt-12" :class="$vuetify.breakpoint.xs? 'work-mask-mob' : 'work-mask'">
       <img src="../assets/WorkMaskGroup .png" class="img-width"/>
     </div>
+
+    <!-- <div class="main-img">
+      <div :class="$vuetify.breakpoint.xs? 'work-intersect-mob' : 'work-intersect'">
+        <img src="../assets/WorkIntersect.png" class="work-intersect"/>
+      </div>
+    </div> -->
 
     <div 
       class="d-flex justify-center rocket-img mb-2" 
     >
-      <img src="../assets/7.png" class="img-width"/>
+      <img src="../assets/7.png" class="rocket-img"/>
     </div>
 
   </div>
@@ -58,8 +64,28 @@ export default {
   letter-spacing: -0.035em;
   color: #34304E;
 }
+.work-intersect{
+  position: absolute;
+  width: 100%;
+  max-height: 500px;
+  /* top: 235px; */
+}
+.work-intersect-white{
+  width: 100%;
+  max-height: 500px;
+  background-color: gray
+}
 .work-mask{
-  width: 800px;
-  height: 400px;
+  max-width: 800px;
+  max-height: 520px;
+}
+.work-mask-mob{
+  width: 300px;
+  height: 300px;
+}
+.main-img{
+  position: relative;
+  width: 100%;
+  max-height: 500px;
 }
 </style>
