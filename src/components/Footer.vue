@@ -1,34 +1,44 @@
 <template>
   <div 
-    class="d-flex flex-column align-center justify-center pa-4"
+    class="d-flex flex-column align-center justify-center pa-4 mt-4"
     :class="$vuetify.breakpoint.xs? 'footer-main-mobile' : 'footer-main'"
   >
     <div class="menu">
-      <v-btn
+      <span
         v-for="link in C_links" 
         :key="link.text" 
         router 
         :to="link.route" 
-        :class="$vuetify.breakpoint.xs? 'menu-btn-mobile' : 'menu-btn'"
-        text
+        :class="$vuetify.breakpoint.xs? 'menu-btn' : 'menu-btn'"
+        @click="onClick(link.route)"
       >
         {{link.text}}
-      </v-btn>
+      </span>
     </div>
     <v-divider class="my-7 divider" ></v-divider>
     <div class="social-icon-main d-flex align-center justify-center">
-      <div class="icon"></div>
-      <div class="icon"></div>
-      <div class="icon"></div>
-      <div class="icon"></div>
-      <div class="icon"></div>
+      <div class="icon">
+        <img src="../assets/Group79.png" class="img-width"/>
+      </div>
+      <div class="icon">
+        <img src="../assets/Group80.png" class="img-width"/>
+      </div>
+      <div class="icon">
+        <img src="../assets/Group81.png" class="img-width"/>
+      </div>
+      <div class="icon">
+        <img src="../assets/Group82.png" class="img-width"/>
+      </div>
+      <div class="icon">
+        <img src="../assets/Group83.png" class="img-width"/>
+      </div>
     </div>
-    <div class="terms">2020 privacy:terms</div>
+    <div class="terms mb-6"><span class="mr-4">© 2010-2020</span>  Privacy — Terms</div>
   </div>
 </template>
 
 <script>
-
+import '../../public/main.css'
 export default {
   name: 'Footer',
   components: {
@@ -43,6 +53,11 @@ export default {
         { text:'Blog',route:'/dashboard/blog'},
       ],
     }
+  },
+  methods: {
+    onClick (url) {
+      this.$router.push(url)
+    }
   }
 }
 </script>
@@ -51,29 +66,49 @@ export default {
 .footer-main{
   min-height: 240px;
   width: 100%;
+  background: linear-gradient(180deg, rgba(250, 250, 252, 0) 0%, #F0F2F7 100%), #FFFFFF;
   /* background-color: blue; */
 }
 .footer-main-mobile{
   min-height: 240px;
   width: 450px;
+  background: linear-gradient(180deg, rgba(250, 250, 252, 0) 0%, #F0F2F7 100%), #FFFFFF;
   /* background-color: blue; */
 }
 .menu{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
   height: 100%;
 }
 .menu-btn{
-  border: none !important;
-  background-color: white;
-}
-.menu-btn-mobile{
-  border: none !important;
-  background-color: white;
-  
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: bold;
   font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #34304E;
+  padding: 10px;
+  cursor: pointer;
+}
+.menu-btn:hover {
+   -webkit-transform: scale(1.2);
+   font-weight: bolder;
+}
+span::after {
+  background-color: #69BDD8;
+  content: "";
+  width: 0;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  transition: width 0.35s ease 0s;
+  position: absolute;
+}
+span:hover::after {
+  width: 100%;
 }
 .logo{
   margin-left: 20px;
@@ -87,14 +122,20 @@ export default {
   width: 100%;
 }
 .icon{
-  background-color: lightgray;
   height: 50px;
   width: 50px;
   margin: 0px 10px 0px 10px;
   border-radius: 50px;
+  cursor: pointer;
 }
 .terms{
   font-size: 10px;
-  margin-top: 10px;
+  margin-top: 70px;
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 12px;
+  color: #34304E;
 }
 </style>
