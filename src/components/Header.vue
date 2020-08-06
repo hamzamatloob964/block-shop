@@ -8,12 +8,13 @@
     </div>
     <div :class="$vuetify.breakpoint.xs? 'd-flex justify-center align-center':'menu'">
       <span
-        v-for="link in C_links" 
+        v-for="(link,i) in C_links" 
         :key="link.text" 
         router 
         :to="link.route" 
         class="menu-btn"
-        @click="onClick(link.route)"
+        @click="onClick(link.route,i)"
+        :id="i"
       >
         {{link.text}}
       </span>
@@ -22,7 +23,7 @@
 </template>
 
 <script>
-
+import {mapActions, mapState} from 'vuex';
 export default {
   name: 'Header',
   components: {
@@ -36,11 +37,31 @@ export default {
         { text:'Blog',route:'/blog'},
         { text:'Connect',route:'/connect'},
       ],
+      index: -1
     }
   },
+  computed: {
+    ...mapState([
+      'navIndex'
+    ])
+  },
   methods: {
-    onClick (url) {
+    ...mapActions([
+      'updateIndex',
+    ]),
+    onClick (url,id) {
+      if(this.index >= 0){
+        let remEle = document.getElementById(this.index);
+        remEle.classList.remove("navbar");
+        this.index = id
+      }
+      let addEle = document.getElementById(id);
+      this.index = id
+      addEle.classList.add("navbar");
+      //document.getElementById(id).setAttribute("class", "navbar");
       this.$router.push(url)
+      this.updateIndex(id)
+      console.log("store index is : ",this.navIndex)
     }
   }
 }
@@ -104,5 +125,23 @@ span:hover::after {
   font-weight: 600;
   font-size: 21px;
   line-height: 24px;
+}
+.navbar{
+  -webkit-transform: scale(1.2);
+   font-weight: bold;
+   padding: 5px;
+}
+.navbar::after {
+  background-color: #69BDD8;
+  content: "";
+  width: 0;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  transition: width 0.35s ease 0s;
+  position: absolute;
+}
+.navbar:hover::after {
+  width: 100%;
 }
 </style>
