@@ -6,19 +6,20 @@ Vue.use(VueRouter)
 
   const routes = [
   {
-    path: '/dashboard',
+    path: '/',
     name: 'About',
     component: () => import('../views/Dashboard.vue'),
     children: [
-      { path: '/dashboard/services', component: () => import('../views/Services.vue') },
-      { path: '/dashboard/work', component: () => import('../views/Work.vue') },
-      { path: '/dashboard/blog', component: () => import('../views/Blog.vue') },
-      { path: '/dashboard/about', component: () => import('../views/About.vue') },
+      { path: '/services', component: () => import('../views/Services.vue') },
+      { path: '/work', component: () => import('../views/Work.vue') },
+      { path: '/blog', component: () => import('../views/Blog.vue') },
+      { path: '/about', component: () => import('../views/About.vue') },
     ]
   }
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

@@ -46,11 +46,11 @@ export default {
   data () {
     return {
       C_links: [
-        { text:'Services',route:'/dashboard/services'},
-        { text:'About',route:'/dashboard/about'},
-        { text:'BlockShop',route:'/dashboard/blockshop'},
-        { text:'Work',route:'/dashboard/work'},
-        { text:'Blog',route:'/dashboard/blog'},
+        { text:'Services',route:'/services'},
+        { text:'About',route:'/about'},
+        { text:'BlockShop',route:'/blockshop'},
+        { text:'Work',route:'/work'},
+        { text:'Blog',route:'/blog'},
       ],
     }
   },

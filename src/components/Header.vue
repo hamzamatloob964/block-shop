@@ -30,11 +30,11 @@ export default {
   data () {
     return {
       C_links: [
-        { text:'Services',route:'/dashboard/services'},
-        { text:'About',route:'/dashboard/about'},
-        { text:'Work',route:'/dashboard/work'},
-        { text:'Blog',route:'/dashboard/blog'},
-        { text:'Connect',route:'/dashboard/connect'},
+        { text:'Services',route:'/services'},
+        { text:'About',route:'/about'},
+        { text:'Work',route:'/work'},
+        { text:'Blog',route:'/blog'},
+        { text:'Connect',route:'/connect'},
       ],
     }
   },
