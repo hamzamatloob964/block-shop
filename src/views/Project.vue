@@ -7,53 +7,18 @@
       <span 
         :class="$vuetify.breakpoint.xs? 'work-title-mob' : 'work-title'"
       >
-        Case Studies
+        Project Title
       </span>
     </div>
 
     <div class="d-flex justify-center align-center">
       <span :class="$vuetify.breakpoint.xs? 'work-sub-title-mob' : 'work-sub-title'">
-        Subheader here lorem ipsum
+        We provided high-quality coding to create a more intuitive experience.
       </span>
     </div>
 
-    <div class="projects d-flex justify-center align-center flex-wrap my-10">
-      <v-card
-        class="mx-auto rounded-xl ma-5"
-        max-width="200"
-        height="300"
-        v-for="(item,i) in projImgsArr" :key="i"
-      >
-        <v-img
-          class="white--text align-end rounded-xl"
-          height="150px"
-          :src="require(`@/assets/${item.img}`)" alt
-        >
-        </v-img>
-
-        <v-card-subtitle class="card-title">{{item.text}}</v-card-subtitle>
-
-        <!-- <v-card-text class="text--primary">
-          <div>Whitehaven Beach</div>
-
-          <div>Whitsunday Island, Whitsunday Islands</div>
-        </v-card-text> -->
-
-        <v-card-actions class="card-btn">
-          <v-btn
-            color="#69BDD8"
-            text
-            @click="onClick"
-          >
-            <span class="see-more">See more</span>
-            <img 
-              src="../assets/arrow.png" 
-              class="ml-2 mb-1"
-              :class="$vuetify.breakpoint.xs? 'img-width' : 'img-width'"
-            />
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+    <div class="mt-12" :class="$vuetify.breakpoint.xs? 'work-mask-mob' : 'work-mask'">
+      <img src="../assets/WorkMaskGroup .png" class="img-width"/>
     </div>
 
     <div 
@@ -70,51 +35,47 @@
         class="d-flex flex-column justify-center align-center curve-main"
         :class="$vuetify.breakpoint.xs? 'curve-main-mob' : 'curve-main'"
       >
-        <span :class="$vuetify.breakpoint.xs? 'curve-title-mob mb-3' : 'curve-title mb-3'">
-          Project Highlights
+        <span :class="$vuetify.breakpoint.xs? 'curve-title-mob mb-3' : 'curve-title mb-8'">
+          Lorem Ipsum
         </span>
-        <!-- <span :class="$vuetify.breakpoint.xs? 'curve-text-mob' : 'curve-text'">
+        <span :class="$vuetify.breakpoint.xs? 'curve-text-mob' : 'curve-text'">
           At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat
-        </span> -->
+        </span>
       </div>
       <div :class="$vuetify.breakpoint.xs? 'carousel-main-mob' : 'carousel-main'">
         <Carousel3d 
           controlsVisible 
-          :width="$vuetify.breakpoint.xs? 180:390"
-          :height="$vuetify.breakpoint.xs? 120:230"
-          :space="$vuetify.breakpoint.xs? 50:140"
-          perspective="5"
+          display="1" 
           border="0"
-          scaling="350"
+          :width="$vuetify.breakpoint.xs? 320:600" :height="$vuetify.breakpoint.xs? 190:300"
         >
-          <Slide class="caro-slide" v-for="(item,i) in [1,2,3,4,5,6]" :key="i" :index="i">
-            <img 
-              src="../assets/workCarouselImg.png" 
-              :class="$vuetify.breakpoint.xs? 'slider-img' : 'slider-img'"
-            />
+          <Slide class="caro-slide" :index="0">
+              <img 
+                src="../assets/workSliderGroup48.png" 
+                :class="$vuetify.breakpoint.xs? 'slider-img' : 'slider-img'"
+              />
+          </Slide>
+          <Slide class="caro-slide" :index="1">
+              <img 
+                src="../assets/workSliderGroup48.png" 
+                :class="$vuetify.breakpoint.xs? 'slider-img' : 'slider-img'"
+              />
+          </Slide>
+          <Slide class="caro-slide" :index="2">
+              <img 
+                src="../assets/workSliderGroup48.png" 
+                :class="$vuetify.breakpoint.xs? 'slider-img' : 'slider-img'"
+              />
           </Slide>
         </Carousel3d>
       </div>
     </div>
+    <div :class="$vuetify.breakpoint.xs? 'caro-space-mob' : 'caro-space'"></div>
 
-    <!-- <div 
+    <div 
       class="d-flex justify-center rocket-img mb-2" 
     >
       <img src="../assets/7.png" class="rocket-img"/>
-    </div>
-
-    <div :class="$vuetify.breakpoint.xs? 'caro-space-mob' : 'caro-space'"></div> -->
-
-    <div 
-      class="d-flex justify-center" 
-      :class="$vuetify.breakpoint.xs? 'rocket-img-cont-mob' : 'rocket-img-cont mb-2'"
-    >
-      <div 
-        class="d-flex justify-center" 
-        :class="$vuetify.breakpoint.xs? 'rocket-img-mob' : 'rocket-img mb-2'"
-      >
-        <img src="../assets/7.png" class="img-width"/>
-      </div>
     </div>
 
   </div>
@@ -124,60 +85,20 @@
 import '../../public/main.css'
 import {Carousel3d, Slide} from 'vue-carousel-3d'
 export default {
-  name: 'services',
+  name: 'project',
   components: {
     Carousel3d,
     Slide
-  },
-  data () {
-    return {
-      projImgsArr: [
-        {
-          img: 'project-img-1.png',
-          text: 'Project 1'
-        },
-        {
-          img: 'project-img-3.png',
-          text: 'Pain son rose more park way that'
-        },
-        {
-          img: 'project-img-4.png',
-          text: 'Project 4'
-        },
-        {
-          img: 'project-img-5.png',
-          text: 'Project 5'
-        },
-        {
-          img: 'project-img-2.png',
-          text: 'Project 1'
-        },
-        {
-          img: 'project-img-6.png',
-          text: 'Pain son rose more park way that'
-        },
-        {
-          img: 'project-img-7.png',
-          text: 'Project 4'
-        },
-        {
-          img: 'project-img-8.png',
-          text: 'Project 5'
-        },
-      ]
-    }
-  },
-  methods: {
-    onClick () {
-      this.$router.push('work/project')
-    }
   }
 }
 </script>
 <style scoped>
 .work-main{
-  /* width: 450px; */
+  width: 450px;
+}
+.rocket-img{
   width: 100%;
+  max-height: 430px;
 }
 .work-title{
   font-family: "Alegreya Sans";
@@ -213,12 +134,16 @@ export default {
   color: #34304E;
 }
 .work-intersect{
+  position: absolute;
   width: 100%;
-  height: 600px;
+  height: 650px;
+  bottom: 2px;
 }
 .work-intersect-mob{
+  position: absolute;
   width: 100%;
-  height: 300px;
+  height: 450px;
+  bottom: 2px;
 }
 .work-intersect-white{
   width: 100%;
@@ -230,21 +155,20 @@ export default {
   max-height: 520px;
 }
 .work-mask-mob{
-  /* width: 300px; */
-  width: 100%;
+  width: 300px;
   height: 300px;
 }
 .main-img{
   position: relative;
   width: 100%;
   background-color: white;
-  /* height: 600px; */
+  height: 560px;
 }
 .main-img-mob{
   position: relative;
   width: 100%;
   background-color: white;
-  height: 320px;
+  height: 400px;
 }
 .curve-title{
   font-family: "Alegreya Sans";
@@ -266,12 +190,12 @@ export default {
 .curve-main{
   position: absolute;
   width: 800px;
-  top: 80px;
+  top: 0px;
 }
 .curve-main-mob{
   position: absolute;
   width: 400px;
-  top: 50px;
+  top: 0px;
 }
 .curve-text{
   font-family: "Josefin Sans";
@@ -292,22 +216,22 @@ export default {
 }
 .carousel-main{
   position: absolute;
-  width: 800px;
+  width: 600px;
   height: 320px;
-  bottom: 95px;
+  bottom: -50px;
 }
 .carousel-main-mob{
   position: absolute;
   width: 320px;
   height: 190px;
-  bottom: 40px;
+  bottom: -1px;
 }
 .caro-slide{
-  border-radius: 25px;
+  border-radius: 35px;
 }
 .caro-space{
   width: 100%;
-  height: 350px;
+  height: 80px;
   background-color:white ;
 }
 .caro-space-mob{
@@ -319,61 +243,5 @@ export default {
   width: 100%;
   height: 100%;
   background-color: white;
-}
-.rocket-img-cont{
-  position: relative;
-  width: 100%;
-  height: 340px;
-}
-.rocket-img-cont-mob{
-  position: relative;
-  width: 100%;
-  height: 120px;
-  background-color: white;
-}
-.rocket-img{
-  position: absolute;
-  width: 100%;
-  object-fit: cover;
-  height: 430px;
-  bottom: 0px;
-}
-.rocket-img-mob{
-  position: absolute;
-  width: 100%;
-  object-fit: cover;
-  height: 170px;
-  bottom: 0px;
-}
-.projects{
-  width: 100%;
-  padding: 0px 120px 0px 120px;
-}
-.card-title{
-  font-family: "Josefin Sans";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 140%;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #34304E;
-  padding: 20px 16px 0px 16px !important;
-}
-.see-more{
-  font-family: "Josefin Sans";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 140%;
-  letter-spacing: -0.035em;
-  color: #69BDD8;
-}
-.card-btn{
-  position: absolute;
-  bottom: 10px;
-}
-.card-btn:hover{
-  -webkit-transform: scale(1.1);
 }
 </style>

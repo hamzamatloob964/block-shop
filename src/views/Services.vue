@@ -29,7 +29,7 @@
     </div>
 
     <div class="learn d-flex justify-center align-center my-2">
-      <LearnBtn/>
+        <LearnBtn class="btn-size" btnText="Learn"/>
     </div>
 
     <div :class="$vuetify.breakpoint.xs? 'd-flex flex-column pa-10' : 'd-flex pa-10'">
@@ -49,7 +49,7 @@
     </div>
 
     <div class="learn d-flex justify-center align-center my-2">
-      <LearnBtn/>
+      <LearnBtn class="btn-size" btnText="Learn"/>
     </div>
 
     <div :class="$vuetify.breakpoint.xs? 'd-flex flex-column pa-10' : 'd-flex pa-10'">
@@ -69,7 +69,7 @@
     </div>
 
     <div class="learn d-flex justify-center align-center mt-2 mb-10">
-      <LearnBtn/>
+      <LearnBtn class="btn-size" btnText="Learn"/>
     </div>
 
     <div class="tool-img d-flex justify-center mb-2">
@@ -113,7 +113,8 @@ export default {
 </script>
 <style scoped>
 .service-main{
-  width: 450px;
+  /* width: 450px; */
+  width: 100%;
 }
 .img{
   width: 100%;
@@ -122,17 +123,20 @@ export default {
 .tool-img{
   position: relative;
   width: 100%;
+  object-fit: cover;
   min-height: 100px;
 }
 .rocket-img{
   position: absolute;
   width: 100%;
+  object-fit: cover;
   height: 430px;
   bottom: 10px;
 }
 .rocket-img-mob{
   position: absolute;
   width: 100%;
+  object-fit: cover;
   height: 170px;
   bottom: 30px;
 }
@@ -154,12 +158,12 @@ export default {
 .size-12{
   font-size: 12px;
 }
-.size-20{
+/* .size-20{
   font-family: "Alegreya Sans";
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
-}
+} */
 .size-56{
   font-family: "Alegreya Sans";
   font-style: normal;
@@ -229,5 +233,13 @@ export default {
   line-height: 10px;
   letter-spacing: -0.02em;
   color: #FFFFFF;
+}
+.btn-size{
+  width: 182px;
+  height: 48px;
+  color: #69BDD8;
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: bold;
 }
 </style>

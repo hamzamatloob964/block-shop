@@ -10,10 +10,12 @@ Vue.use(VueRouter)
     name: 'About',
     component: () => import('../views/Dashboard.vue'),
     children: [
+      { path: '/', component: () => import('../views/Home.vue') },
       { path: '/services', component: () => import('../views/Services.vue') },
       { path: '/work', component: () => import('../views/Work.vue') },
       { path: '/blog', component: () => import('../views/Blog.vue') },
       { path: '/about', component: () => import('../views/About.vue') },
+      { path: '/work/project', component: () => import('../views/Project.vue') },
     ]
   }
 ]
