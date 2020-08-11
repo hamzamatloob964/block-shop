@@ -47,6 +47,7 @@
           controlsVisible 
           display="1" 
           border="0"
+          class="caro-slide"
           :width="$vuetify.breakpoint.xs? 320:600" :height="$vuetify.breakpoint.xs? 190:300"
         >
           <Slide class="caro-slide" :index="0">
@@ -225,9 +226,6 @@ export default {
   width: 320px;
   height: 190px;
   bottom: -1px;
-}
-.caro-slide{
-  border-radius: 35px;
 }
 .caro-space{
   width: 100%;

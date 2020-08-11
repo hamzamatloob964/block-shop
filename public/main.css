@@ -13,3 +13,30 @@
   font-weight: bold;
   font-size: 20px;
 }
+.caro-slide{
+  border-radius: 35px;
+}
+.card-title{
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 140%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #34304E;
+  padding: 20px 16px 0px 16px !important;
+}
+.card-btn{
+  position: absolute;
+  bottom: 10px;
+}
+.see-more{
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.035em;
+  color: #69BDD8;
+}

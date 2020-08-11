@@ -72,18 +72,33 @@
       <LearnBtn class="btn-size" btnText="Learn"/>
     </div>
 
-    <div class="tool-img d-flex justify-center mb-2">
-      <img src="../assets/MaskGroup.png" class="img-width"/>
+    <div :class="$vuetify.breakpoint.xs? 'tool-img-mob' : 'tool-img'" class="d-flex justify-center mb-2">
+      <img src="../assets/WorkIntersect.png" class="img-width"/>
+      <span :class="$vuetify.breakpoint.xs? 'ser-intersec-text-mob' : 'ser-intersec-text'">Technologies</span>
+      <div 
+        class="d-flex justify-center align-center flex-wrap"
+        :class="$vuetify.breakpoint.xs? 'tech-main-mob' : 'tech-main'"
+      >
         <div 
-          class="d-flex justify-center align-center"
-          :class="$vuetify.breakpoint.xs? 'tool-btn-mob' : 'tool-btn'"
+          v-for="(item,i) in techArr" 
+          :key="i"  
+          class="d-flex flex-column justify-center align-center ma-5"
+          :class="$vuetify.breakpoint.xs? 'tech-div-mob' : 'tech-div'"
         >
-          <span 
-            :class="$vuetify.breakpoint.xs? 'tool-btn-text-mob' : 'tool-btn-text'"
-          >
-            See Our Work
-          </span>
+          <img :src="require(`@/assets/${item.img}`)" :class="$vuetify.breakpoint.xs? 'tech-div-mob' : 'tech-div'"/>
+          <span :class="$vuetify.breakpoint.xs? 'img-text-mob mt-2' : 'img-text mt-4'" >{{item.text}}</span>
         </div>
+      </div>
+      <div 
+        class="d-flex justify-center align-center"
+        :class="$vuetify.breakpoint.xs? 'tool-btn-mob' : 'tool-btn'"
+      >
+        <span 
+          :class="$vuetify.breakpoint.xs? 'tool-btn-text-mob' : 'tool-btn-text'"
+        >
+          See Our Work
+        </span>
+      </div>
     </div>
 
     <div 
@@ -108,6 +123,20 @@ export default {
   name: 'services',
   components: {
     LearnBtn
+  },
+  data () {
+    return {
+      techArr: [
+        {img: 'react.png', text: 'React'},
+        {img: 'html.png', text: 'HTML5'},
+        {img: 'css.png', text: 'CSS3'},
+        {img: 'js.png', text: 'Java Script'},
+        {img: 'vue.png', text: 'Vue.js'},
+        {img: 'polymer.png', text: 'Polymer'},
+        {img: 'jquery.png', text: 'JQuery'},
+        {img: 'angular.png', text: 'Angular'},
+      ]
+    }
   }
 }
 </script>
@@ -125,6 +154,11 @@ export default {
   width: 100%;
   object-fit: cover;
   min-height: 100px;
+}
+.tool-img-mob{
+  position: relative;
+  width: 100%;
+  height: 450px;
 }
 .rocket-img{
   position: absolute;
@@ -241,5 +275,63 @@ export default {
   font-family: "Josefin Sans";
   font-style: normal;
   font-weight: bold;
+}
+.ser-intersec-text{
+  position: absolute;
+  font-family: "Alegreya Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 56px;
+  line-height: 61px;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+  top: 90px;
+}
+.ser-intersec-text-mob{
+  position: absolute;
+  font-family: "Alegreya Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 61px;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+  top: 10px;
+}
+.tech-main{
+  position: absolute;
+  width: 700px;
+  height: 380px;
+  bottom: 130px;
+}
+.tech-main-mob{
+  position: absolute;
+  width: 300px;
+  height: 280px;
+  bottom: 90px;
+}
+.tech-div{
+  width: 120px;
+  height: 120px;
+}
+.tech-div-mob{
+  width: 50px;
+  height: 50px;
+}
+.img-text{
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+.img-text-mob{
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  color: #FFFFFF;
 }
 </style>

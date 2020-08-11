@@ -19,6 +19,65 @@
       </div>
     </div>
 
+    <div :class="$vuetify.breakpoint.xs? 'dash-main-mob' : 'dash-main'">
+
+      <div>
+        <div :class="$vuetify.breakpoint.xs? 'intersect-space-mob' : 'intersect-space'"></div>
+        <div 
+          class="d-flex flex-column justify-center align-center"
+          :class="$vuetify.breakpoint.xs? 'intersect-main-mob' : 'intersect-main'"
+        >
+          <div 
+            class="d-flex flex-column justify-center align-center"
+            :class="$vuetify.breakpoint.xs? 'intersect-text-mob' : 'intersect-text'"
+          >
+            <span :class="$vuetify.breakpoint.xs? 'text-style-mob' : 'text-style'"> 
+              Trusted by the 
+            </span>
+            <span :class="$vuetify.breakpoint.xs? 'text-style-mob' : 'text-style'"> 
+              World's Best Companies 
+            </span>
+          </div>
+
+          <div 
+            :class="$vuetify.breakpoint.xs? 'd-flex flex-column justify-center align-center comp-mob' : 'd-flex justify-center align-center comp'"
+          >
+            <div 
+              v-for="(item,i) in compArr" 
+              :key="i"
+              class="d-flex flex-column justify-center align-center pa-8"
+            >
+              <div class="comp-icon mb-4">
+                <img 
+                  :src="require(`@/assets/${item.img}`)" 
+                  alt 
+                  class="comp-img-width"
+                />    
+              </div>
+              <span class="comp-text" >{{item.text}}</span>
+            </div>
+          </div>
+
+          <div 
+            class="d-flex justify-center align-center intersect-btn"
+            :class="$vuetify.breakpoint.xs? 'intersect-bottom-mob' : 'intersect-bottom'"
+          >
+            <span class="intersect-btn-text" >Show More</span>
+          </div>
+
+          <img src="../assets/home-Intersect .png" class="img-width"/>
+        </div>
+      </div>
+
+      <div 
+        class="mt-8 px-6 d-flex justify-center align-center"
+        :class="$vuetify.breakpoint.xs? 'dashboard-mob' : 'dashboard'"
+      >
+        <img src="../assets/dashboard.png" class="img-width"/>
+      </div>
+    </div>
+
+
     <div :class="$vuetify.breakpoint.xs? 'd-flex flex-column pa-10' : 'd-flex pa-10'">
       <div class="parag-text d-flex flex-column mr-4">
         <span :class="$vuetify.breakpoint.xs? 'size-20' : 'size-56'">
@@ -114,31 +173,125 @@
       </div>
     </div>
 
-    <!-- <div class="tool-img d-flex justify-center mb-2">
-      <img src="../assets/MaskGroup.png" class="img-width"/>
+    <div :class="$vuetify.breakpoint.xs? 'slider-intersect-mob' : 'slider-intersect'">
+      <img src="../assets/home-slider-intersect.png" class="img-width"/>
+      <div 
+        :class="$vuetify.breakpoint.xs? 'slider-intersect-text-mob' : 'slider-intersect-text'" 
+        class="d-flex justify-center align-center"
+      >
+        <span :class="$vuetify.breakpoint.xs? 'text-style-mob' : 'text-style'" >
+          Our Work Mentioned in Press:
+        </span>
+      </div>
+
+      <div class="d-flex justify-center carousel-center">
         <div 
-          class="d-flex justify-center align-center"
-          :class="$vuetify.breakpoint.xs? 'tool-btn-mob' : 'tool-btn'"
+          class="caro-slide"
+          :class="$vuetify.breakpoint.xs? 'carousel-main-mob' : 'carousel-main'"
         >
-          <span 
-            :class="$vuetify.breakpoint.xs? 'tool-btn-text-mob' : 'tool-btn-text'"
+          <Carousel3d 
+            controlsVisible 
+            display="1" 
+            border="0"
+            :width="$vuetify.breakpoint.xs? 320:750" 
+            :height="$vuetify.breakpoint.xs? 190:250"
+            class="caro-slide"
           >
-            See Our Work
-          </span>
+            <Slide class="caro-slide" :index="0">
+                <img 
+                  src="../assets/workSliderGroup48.png" 
+                  :class="$vuetify.breakpoint.xs? 'slider-img' : 'comp-img-width'"
+                />
+            </Slide>
+            <Slide class="caro-slide" :index="1">
+                <img 
+                  src="../assets/workSliderGroup48.png" 
+                  :class="$vuetify.breakpoint.xs? 'slider-img' : 'comp-img-width'"
+                />
+            </Slide>
+            <Slide class="caro-slide" :index="2">
+                <img 
+                  src="../assets/workSliderGroup48.png" 
+                  :class="$vuetify.breakpoint.xs? 'slider-img' : 'comp-img-width'"
+                />
+            </Slide>
+          </Carousel3d>
         </div>
+      </div>
+    </div>
+
+    <div class="slider-space"></div>
+
+    <div class="work-proj d-flex flex-column justify-center align-center">
+      <span :class="$vuetify.breakpoint.xs? 'work-text-mob' : 'work-text'" class="mb-5">
+        Recent Work / Projects
+      </span>
+      <span :class="$vuetify.breakpoint.xs? 'work-text-sub-mob' : 'work-text-sub'" >
+        “If you don't try this app, you won't become the superhero”
+      </span>
+      <span :class="$vuetify.breakpoint.xs? 'work-text-sub-mob' : 'work-text-sub'" >
+        “you were meant to be”
+      </span>
+    </div>
+
+    <div class="proj-list d-flex justify-center align-center my-16 px-16">
+      <v-card
+        class="mx-auto rounded-xl ma-5 on-hover"
+        max-width="200"
+        height="300"
+        v-for="(item,i) in projImgsArr" :key="i"
+      >
+        <v-img
+          class="white--text align-end rounded-xl"
+          height="150px"
+          :src="require(`@/assets/${item.img}`)" 
+          alt
+        >
+        </v-img>
+
+        <v-card-subtitle class="card-title">{{item.text}}</v-card-subtitle>
+
+        <v-card-actions class="card-btn">
+          <v-btn
+            color="#69BDD8"
+            text
+            @click="onClick"
+          >
+            <span class="see-more">See more</span>
+            <img 
+              src="../assets/arrow.png" 
+              class="ml-2 mb-1"
+              :class="$vuetify.breakpoint.xs? 'img-width' : 'img-width'"
+            />
+          </v-btn>
+        </v-card-actions>
+      </v-card>
     </div>
 
     <div 
-      class="d-flex justify-center" 
-      :class="$vuetify.breakpoint.xs? 'rocket-img-cont-mob' : 'rocket-img-cont mb-2'"
+      :class="$vuetify.breakpoint.xs? 'get-touch-mob' : 'get-touch'" 
+      class="d-flex justify-center align-center"
     >
       <div 
-        class="d-flex justify-center" 
-        :class="$vuetify.breakpoint.xs? 'rocket-img-mob' : 'rocket-img mb-2'"
+        :class="$vuetify.breakpoint.xs? 'slider-intersect-bottom-mob' : 'slider-intersect-bottom'" 
+        class="d-flex justify-center align-center"
       >
-        <img src="../assets/7.png" class="img-width"/>
+        <span :class="$vuetify.breakpoint.xs? 'text-style-mob' : 'text-style'" >
+          Get in touch form
+        </span>
       </div>
-    </div> -->
+
+      <img 
+        src="../assets/home-intersect-img.png" 
+        :class="$vuetify.breakpoint.xs? 'absolute-pos-mob' : 'absolute-pos'"
+      />
+      <img 
+        src="../assets/home-Intersect .png" 
+        :class="$vuetify.breakpoint.xs? 'home-itersec-mob' : 'comp-img-width'"
+      />
+    </div>
+
+    
 
   </div>
 </template>
@@ -146,11 +299,44 @@
 <script>
 import LearnBtn from '../components/shared/LearnBtn'
 import '../../public/main.css'
+import {Carousel3d, Slide} from 'vue-carousel-3d'
 export default {
   name: 'home',
   components: {
-    LearnBtn
-  }
+    LearnBtn,
+    Carousel3d,
+    Slide
+  },
+  data () {
+    return {
+      compArr: [
+        {img: 'nike.png', text: 'Nike'},
+        {img: 'star-bucks.png', text: 'Starbucks'},
+        {img: 'kfc.png', text: 'KFC'},
+        {img: 'pepsi.png', text: 'Pepsi'},
+        {img: 'coca-cola.png', text: 'Coca-Cola'},
+      ],
+      projImgsArr: [
+        {
+          img: 'project-img-1.png',
+          text: 'Project 1'
+        },
+        {
+          img: 'project-img-3.png',
+          text: 'Pain son rose more park way that'
+        },
+        {
+          img: 'project-img-4.png',
+          text: 'Project 4'
+        },
+        {
+          img: 'project-img-5.png',
+          text: 'Project 5'
+        },
+        
+      ]
+    }
+  },
 }
 </script>
 <style scoped>
@@ -351,5 +537,258 @@ export default {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #34304E;
+}
+.dashboard{
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  height: 700px;
+}
+.dashboard-mob{
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  height: 400px;
+}
+.intersect-main{
+  width: 100%;
+  height: 650px;
+  /* background-color: blue; */
+  position: relative;
+}
+.intersect-main-mob{
+  width: 100%;
+  height: 1240px;
+  /* background-color: blue; */
+  position: relative;
+}
+.intersect-space{
+  width: 100%;
+  height: 700px;
+  /* background-color: blue; */
+  position: relative;
+}
+.intersect-space-mob{
+  width: 100%;
+  height: 430px;
+  position: relative;
+}
+.intersect-text{
+  position: absolute;
+  width: 100%;
+  top: 100px;
+}
+.intersect-text-mob{
+  position: absolute;
+  width: 100%;
+  top: 60px;
+}
+.text-style{
+  font-family: "Alegreya Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 56px;
+  line-height: 97.25%;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+}
+.text-style-mob{
+  font-family: "Alegreya Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 97.25%;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+}
+.comp{
+  position: absolute;
+  width: 100%;
+  bottom: 180px;
+}
+.comp-mob{
+  position: absolute;
+  width: 100%;
+  bottom: 90px;
+}
+.comp-icon{
+  /* height: 60px; */
+  /* width: 170px; */
+}
+.comp-img-width{
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+}
+.comp-text{
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+.intersect-btn{
+  position: absolute;
+  cursor: pointer;
+  width: 144px;
+  height: 48px;
+  background: #78A9F0;
+  border-radius: 48px;
+}
+.intersect-bottom{
+  bottom: 80px;
+}
+.intersect-bottom-mob{
+  bottom: 30px;
+}
+.intersect-btn-text{
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 15px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+.dash-main{
+  position: relative;
+  height: 1400px;
+}
+.dash-main-mob{
+  position: relative;
+  height: 1700px;
+}
+.intersect-main-cont{
+  /* position: absolute */
+}
+.slider-intersect{
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+.slider-intersect-mob{
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+.slider-intersect-text{
+  position: absolute;
+  top: 130px;
+  width: 100%;
+}
+.slider-intersect-text-mob{
+  position: absolute;
+  top: 60px;
+  width: 100%;
+}
+.slider-intersect-bottom{
+  position: absolute;
+  top: 80px;
+  width: 100%;
+}
+.slider-intersect-bottom-mob{
+  position: absolute;
+  top: 60px;
+  width: 100%;
+}
+/* .slider-intersect-text-style{
+  font-family: "Alegreya Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 56px;
+  line-height: 98.93%;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+} */
+.carousel-main{
+  position: absolute;
+  width: 750px;
+  height: 270px;
+  bottom: -30px;
+}
+.carousel-main-mob{
+  position: absolute;
+  width: 320px;
+  height: 190px;
+  bottom: -1px;
+}
+.carousel-center{
+  width: 100%;
+}
+.slider-space{
+  width: 100%;
+  height: 100px;
+}
+.work-proj{
+  width: 100%;
+}
+.work-text{
+  font-family: "Alegreya Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 56px;
+  line-height: 67px;
+  color: #34304E;
+}
+.work-text-mob{
+  font-family: "Alegreya Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 67px;
+  color: #34304E;
+}
+.work-text-sub{
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.035em;
+  color: #34304E;
+}
+.work-text-sub-mob{
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 140%;
+  letter-spacing: -0.035em;
+  color: #34304E;
+}
+.proj-list{
+  width: 100%;
+  height: 300px;
+  /* background-color: blue; */
+}
+.on-hover:hover{
+  -webkit-transform: scale(1.1);
+}
+.get-touch{
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+.get-touch-mob{
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+.home-itersec-mob{
+  width: 100%;
+  height: 300px;
+}
+.absolute-pos{
+  width: 650px;
+  height: 300px;
+  bottom: 20px;
+  position: absolute;
+}
+.absolute-pos-mob{
+  width: 190px;
+  height: 150px;
+  bottom: 20px;
+  position: absolute;
 }
 </style>

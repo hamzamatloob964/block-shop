@@ -27,7 +27,8 @@
         <v-img
           class="white--text align-end rounded-xl"
           height="150px"
-          :src="require(`@/assets/${item.img}`)" alt
+          :src="require(`@/assets/${item.img}`)" 
+          alt
         >
         </v-img>
 
@@ -349,7 +350,7 @@ export default {
   width: 100%;
   padding: 0px 120px 0px 120px;
 }
-.card-title{
+/* .card-title{
   font-family: "Josefin Sans";
   font-style: normal;
   font-weight: bold;
@@ -359,8 +360,8 @@ export default {
   text-transform: uppercase;
   color: #34304E;
   padding: 20px 16px 0px 16px !important;
-}
-.see-more{
+} */
+/* .see-more{
   font-family: "Josefin Sans";
   font-style: normal;
   font-weight: normal;
@@ -368,11 +369,11 @@ export default {
   line-height: 140%;
   letter-spacing: -0.035em;
   color: #69BDD8;
-}
-.card-btn{
+} */
+/* .card-btn{
   position: absolute;
   bottom: 10px;
-}
+} */
 .card-btn:hover{
   -webkit-transform: scale(1.1);
 }
