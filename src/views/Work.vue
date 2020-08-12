@@ -19,8 +19,9 @@
 
     <div class="projects d-flex justify-center align-center flex-wrap my-10">
       <v-card
-        class="mx-auto rounded-xl ma-5"
+        class="mx-auto rounded-xl ma-5 on-hover"
         max-width="200"
+        min-width="200"
         height="300"
         v-for="(item,i) in projImgsArr" :key="i"
       >

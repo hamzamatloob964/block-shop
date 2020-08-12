@@ -234,38 +234,12 @@
       </span>
     </div>
 
-    <div class="proj-list d-flex justify-center align-center my-16 px-16">
-      <v-card
-        class="mx-auto rounded-xl ma-5 on-hover"
-        max-width="200"
-        height="300"
-        v-for="(item,i) in projImgsArr" :key="i"
-      >
-        <v-img
-          class="white--text align-end rounded-xl"
-          height="150px"
-          :src="require(`@/assets/${item.img}`)" 
-          alt
-        >
-        </v-img>
-
-        <v-card-subtitle class="card-title">{{item.text}}</v-card-subtitle>
-
-        <v-card-actions class="card-btn">
-          <v-btn
-            color="#69BDD8"
-            text
-            @click="onClick"
-          >
-            <span class="see-more">See more</span>
-            <img 
-              src="../assets/arrow.png" 
-              class="ml-2 mb-1"
-              :class="$vuetify.breakpoint.xs? 'img-width' : 'img-width'"
-            />
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+    <div 
+      class="d-flex justify-center align-center"
+      :class="$vuetify.breakpoint.xs? 'proj-list-mob my-10' : 'proj-list my-16 px-16'" 
+    >
+      <CustVueCarousel/>
+      
     </div>
 
     <div 
@@ -289,6 +263,28 @@
         src="../assets/home-Intersect .png" 
         :class="$vuetify.breakpoint.xs? 'home-itersec-mob' : 'comp-img-width'"
       />
+
+      <div :class="$vuetify.breakpoint.xs? 'get-form-mob pa-4' : 'get-form pa-8'">
+        <v-text-field
+          label="Name"
+          outlined
+          rounded
+          dense
+        ></v-text-field>
+        <v-text-field
+          label="E-mail"
+          outlined
+          rounded
+          dense
+        ></v-text-field>
+        <v-btn 
+          rounded 
+          :class="$vuetify.breakpoint.xs? 'touch-btn-mob' : 'touch-btn'" 
+          color="#817FED"
+        >
+          <span class="btn-style pa-2">Submit</span>
+        </v-btn>
+      </div>
     </div>
 
     
@@ -300,15 +296,21 @@
 import LearnBtn from '../components/shared/LearnBtn'
 import '../../public/main.css'
 import {Carousel3d, Slide} from 'vue-carousel-3d'
+// import { Carousel, Slides } from 'vue-carousel';
+import CustVueCarousel from '../components/shared/VueCarousel'
 export default {
   name: 'home',
   components: {
     LearnBtn,
     Carousel3d,
-    Slide
+    Slide,
+    CustVueCarousel
+    // Slides,
+    // Carousel
   },
   data () {
     return {
+      // isPagi: false,
       compArr: [
         {img: 'nike.png', text: 'Nike'},
         {img: 'star-bucks.png', text: 'Starbucks'},
@@ -316,25 +318,25 @@ export default {
         {img: 'pepsi.png', text: 'Pepsi'},
         {img: 'coca-cola.png', text: 'Coca-Cola'},
       ],
-      projImgsArr: [
-        {
-          img: 'project-img-1.png',
-          text: 'Project 1'
-        },
-        {
-          img: 'project-img-3.png',
-          text: 'Pain son rose more park way that'
-        },
-        {
-          img: 'project-img-4.png',
-          text: 'Project 4'
-        },
-        {
-          img: 'project-img-5.png',
-          text: 'Project 5'
-        },
+      // projImgsArr: [
+      //   {
+      //     img: 'project-img-1.png',
+      //     text: 'Project 1'
+      //   },
+      //   {
+      //     img: 'project-img-3.png',
+      //     text: 'Pain son rose more park way that'
+      //   },
+      //   {
+      //     img: 'project-img-4.png',
+      //     text: 'Project 4'
+      //   },
+      //   {
+      //     img: 'project-img-5.png',
+      //     text: 'Project 5'
+      //   },
         
-      ]
+      // ]
     }
   },
 }
@@ -651,6 +653,9 @@ export default {
   letter-spacing: -0.02em;
   color: #FFFFFF;
 }
+.intersect-btn:hover{
+  -webkit-transform: scale(1.2);
+}
 .dash-main{
   position: relative;
   height: 1400px;
@@ -684,7 +689,7 @@ export default {
 }
 .slider-intersect-bottom{
   position: absolute;
-  top: 80px;
+  top: 60px;
   width: 100%;
 }
 .slider-intersect-bottom-mob{
@@ -759,12 +764,16 @@ export default {
 }
 .proj-list{
   width: 100%;
-  height: 300px;
+  height: 350px;
   /* background-color: blue; */
 }
-.on-hover:hover{
-  -webkit-transform: scale(1.1);
+.proj-list-mob{
+  width: 400px;
+  /* background-color: blue; */
 }
+/* .on-hover:hover{
+  -webkit-transform: scale(1.1);
+} */
 .get-touch{
   position: relative;
   width: 100%;
@@ -773,22 +782,58 @@ export default {
 .get-touch-mob{
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 400px;
 }
 .home-itersec-mob{
   width: 100%;
-  height: 300px;
+  height: 400px;
 }
 .absolute-pos{
   width: 650px;
-  height: 300px;
-  bottom: 20px;
+  height: 330px;
+  bottom: 30px;
   position: absolute;
 }
 .absolute-pos-mob{
-  width: 190px;
+  width: 290px;
   height: 150px;
-  bottom: 20px;
+  bottom: 40px;
   position: absolute;
 }
+.get-form{
+  position: absolute;
+  width: 400px;
+  background-color: white;
+  border-radius: 35px;
+  bottom: 110px;
+}
+.get-form-mob{
+  position: absolute;
+  width: 220px;
+  background-color: white;
+  border-radius: 35px;
+  bottom: 90px;
+}
+.touch-btn{
+  width: 335px;
+}
+.touch-btn-mob{
+  width: 190px;
+}
+.btn-style{
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 15px;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+}
+.caro-size{
+  /* height: 350px; */
+}
+/* .caro-size-mob{
+  width: 250px;
+  height: 350px;
+} */
 </style>

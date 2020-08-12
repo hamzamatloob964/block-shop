@@ -3,7 +3,7 @@
     'header-main-mobile py-6 d-flex flex-column justify-center align-center':
     'header-main d-flex align-center py-6'"
   >
-    <div :class="$vuetify.breakpoint.xs? 'mb-4' : 'logo'">
+    <div :class="$vuetify.breakpoint.xs? 'mb-4' : 'logo'" @click="onLogoCLick">
       <span class="berlin-font">blockShop</span>
     </div>
     <div :class="$vuetify.breakpoint.xs? 'd-flex justify-center align-center':'menu'">
@@ -24,6 +24,7 @@
 
 <script>
 import {mapActions, mapState} from 'vuex';
+import '../../public/main.css'
 export default {
   name: 'Header',
   components: {
@@ -61,7 +62,9 @@ export default {
       //document.getElementById(id).setAttribute("class", "navbar");
       this.$router.push(url)
       this.updateIndex(id)
-      console.log("store index is : ",this.navIndex)
+    },
+    onLogoCLick () {
+      this.$router.push('/')
     }
   }
 }
@@ -119,6 +122,7 @@ span:hover::after {
   margin-left: 140px;
 }
 .berlin-font{
+  cursor: pointer;
   font-family: "Berlin Sans FB Regular";
   color: #34304E;
   font-style: normal;
@@ -126,11 +130,11 @@ span:hover::after {
   font-size: 21px;
   line-height: 24px;
 }
-.navbar{
+/* .navbar{
   -webkit-transform: scale(1.2);
    font-weight: bold;
    padding: 5px;
-}
+} */
 .navbar::after {
   background-color: #69BDD8;
   content: "";

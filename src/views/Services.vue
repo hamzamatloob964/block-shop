@@ -152,8 +152,7 @@ export default {
 .tool-img{
   position: relative;
   width: 100%;
-  object-fit: cover;
-  min-height: 100px;
+  height: 700px;
 }
 .tool-img-mob{
   position: relative;

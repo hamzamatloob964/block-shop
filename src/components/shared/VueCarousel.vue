@@ -1,0 +1,103 @@
+<template>
+  <div>
+    <carousel 
+      :perPage="$vuetify.breakpoint.xs? 1 : 3" 
+      navigationEnabled 
+      :paginationEnabled="isPagi" 
+      :class="$vuetify.breakpoint.xs? 'caro-size-mob' : 'caro-size'"
+    >
+      <slide v-for="(item,i) in projImgsArr" :key="i">
+        <v-card
+          class="mx-auto rounded-xl my-4 on-hover"
+          max-width="200"
+          min-width="200"
+          height="300"
+        >
+          <v-img
+            class="white--text align-end rounded-xl"
+            height="150px"
+            :src="require(`@/assets/${item.img}`)" 
+            alt
+          >
+          </v-img>
+
+          <v-card-subtitle class="card-title">{{item.text}}</v-card-subtitle>
+
+          <v-card-actions class="card-btn">
+            <v-btn
+              color="#69BDD8"
+              text
+              @click="onClick"
+            >
+              <span class="see-more">See more</span>
+              <img 
+                src="../../assets/arrow.png" 
+                class="ml-2 mb-1"
+                :class="$vuetify.breakpoint.xs? 'img-width' : 'img-width'"
+              />
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </slide>
+    </carousel>
+  </div>
+</template>
+
+<script>
+import { Carousel, Slide } from 'vue-carousel';
+import '../../../public/main.css'
+export default {
+  name: 'vue-carousel',
+  components: {
+    Slide,
+    Carousel
+  },
+  data () {
+    return {
+      isPagi: false,
+      projImgsArr: [
+        {
+          img: 'project-img-1.png',
+          text: 'Project 1'
+        },
+        {
+          img: 'project-img-3.png',
+          text: 'Pain son rose more park way that'
+        },
+        {
+          img: 'project-img-4.png',
+          text: 'Project 4'
+        },
+        {
+          img: 'project-img-5.png',
+          text: 'Project 5'
+        },
+        
+      ]
+    }
+  },
+  methods: {
+    onClick () {
+      this.$router.push('/work/project')
+    }
+    
+  }
+
+}
+</script>
+
+<style scoped>
+.caro-size{
+  /* width: 1000px; */
+}
+.caro-size-mob{
+  width: 250px;
+  height: 350px;
+}
+.see-more:hover{
+  -webkit-transform: scale(1.1);
+}
+/* .on-hover:hover{
+  -webkit-transform: scale(1.1);
+} */
+</style>

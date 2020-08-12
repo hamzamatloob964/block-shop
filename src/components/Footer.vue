@@ -5,19 +5,37 @@
   >
     <div class="menu">
       <span
-        v-for="link in C_links" 
+        v-for="(link,i) in C_links" 
         :key="link.text" 
         router 
         :to="link.route" 
         :class="$vuetify.breakpoint.xs? 'menu-btn' : 'menu-btn'"
-        @click="onClick(link.route)"
+        @click="onClick(link.route,i)"
+        :id="i"
       >
         {{link.text}}
       </span>
     </div>
+
     <v-divider class="my-7 divider" ></v-divider>
+
     <div class="social-icon-main d-flex align-center justify-center">
-      <div class="icon">
+      <v-btn outlined fab color="indigo" class="mr-4 btn-hover">
+        <img src="../assets/messangerSvg.svg" />
+      </v-btn>
+      <v-btn outlined fab color="indigo" class="mr-4 btn-hover">
+        <img src="../assets/instagram.png" />
+      </v-btn>
+      <v-btn outlined fab color="indigo" class="mr-4 btn-hover">
+        <img src="../assets/fb.png" />
+      </v-btn>
+      <v-btn outlined fab color="indigo" class="mr-4 btn-hover">
+        <img src="../assets/twitter.png" />
+      </v-btn>
+      <v-btn outlined fab color="indigo" class="mr-4 btn-hover">
+        <img src="../assets/youtube.png" />
+      </v-btn>
+      <!-- <div class="icon">
         <img src="../assets/Group79.png" class="img-width"/>
       </div>
       <div class="icon">
@@ -31,7 +49,7 @@
       </div>
       <div class="icon">
         <img src="../assets/Group83.png" class="img-width"/>
-      </div>
+      </div> -->
     </div>
     <div class="terms mb-6"><span class="mr-4">© 2010-2020</span>  Privacy — Terms</div>
   </div>
@@ -55,6 +73,20 @@ export default {
     }
   },
   methods: {
+    // onClick (url,id) {
+    //   console.log("footer navbar.....")
+    //   if(this.index >= 0){
+    //     let remEle = document.getElementById(this.index);
+    //     remEle.classList.remove("navbar");
+    //     this.index = id
+    //   }
+    //   let addEle = document.getElementById(id);
+    //   this.index = id
+    //   addEle.classList.add("navbar");
+    //   //document.getElementById(id).setAttribute("class", "navbar");
+    //   this.$router.push(url)
+    //   //this.updateIndex(id)
+    // },
     onClick (url) {
       this.$router.push(url)
     }
@@ -137,5 +169,11 @@ span:hover::after {
   font-size: 12px;
   line-height: 12px;
   color: #34304E;
+}
+.social-btn{
+  background-color: blue;
+}
+.btn-hover:hover{
+  background-color: #817FED;
 }
 </style>

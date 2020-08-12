@@ -40,3 +40,11 @@
   letter-spacing: -0.035em;
   color: #69BDD8;
 }
+.on-hover:hover{
+  -webkit-transform: scale(1.1);
+}
+.navbar{
+  -webkit-transform: scale(1.2);
+   font-weight: bold;
+   padding: 5px;
+}
