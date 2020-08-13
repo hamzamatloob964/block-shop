@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container :class="$vuetify.breakpoint.xs && 'no-padding'">
     <v-app>
       <router-view />
     </v-app>
@@ -44,5 +44,8 @@ export default {
 .main{
   /* max-width: 550px !important;
   height: 100%; */
+}
+.no-padding {
+  padding: 0px !important;
 }
 </style>

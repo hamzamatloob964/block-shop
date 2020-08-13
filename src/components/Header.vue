@@ -77,7 +77,7 @@ export default {
 }
 .header-main-mobile{
   min-height: 60px;
-  width: 450px;
+  /* width: 450px; */
   background-color: white;
 }
 .menu{

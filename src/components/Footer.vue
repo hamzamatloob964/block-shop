@@ -103,7 +103,7 @@ export default {
 }
 .footer-main-mobile{
   min-height: 240px;
-  width: 450px;
+  /* width: 450px; */
   background: linear-gradient(180deg, rgba(250, 250, 252, 0) 0%, #F0F2F7 100%), #FFFFFF;
   /* background-color: blue; */
 }
