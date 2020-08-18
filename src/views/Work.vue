@@ -244,20 +244,16 @@ export default {
   max-height: 520px;
 }
 .work-mask-mob{
-  /* width: 300px; */
   width: 100%;
   height: 300px;
 }
 .main-img{
   position: relative;
   width: 100%;
-  background-color: white;
-  /* height: 600px; */
 }
 .main-img-mob{
   position: relative;
   width: 100%;
-  background-color: white;
   height: 320px;
 }
 .curve-title{

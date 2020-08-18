@@ -180,13 +180,11 @@ export default {
 .main-img{
   position: relative;
   width: 100%;
-  background-color: white;
   height: 560px;
 }
 .main-img-mob{
   position: relative;
   width: 100%;
-  background-color: white;
   height: 400px;
 }
 .curve-title{
