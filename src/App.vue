@@ -20,7 +20,7 @@ export default {
 };
 </script>
 <style>
-.main-cont{
+body{
   background: linear-gradient(180deg, rgba(250, 250, 252, 0) 0%, rgba(250, 250, 252, 0) 0.01%, #F0F2F7 100%);
 }
   /* @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap'); */
