@@ -112,7 +112,8 @@ export default {
 </script>
 <style scoped>
 .top-logo{
-  margin-left: 90px;
+  margin: 0 auto;
+  padding-right: 36px;
 }
 .header-main{
   min-height: 60px;

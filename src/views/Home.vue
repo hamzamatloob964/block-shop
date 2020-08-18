@@ -1,28 +1,10 @@
 <template>
   <div class="main mt-6 d-flex flex-column justify-center align-center" :class="$vuetify.breakpoint.xs? 'service-main' : 'full-width'">
 
-    <!-- <div class="home-top d-flex flex-column justify-center align-center">
-      <span class="home-heading mb-3">We provided high-quality coding to create a more intuitive experience.</span>
-      <span :class="$vuetify.breakpoint.xs? 'size-20' : 'title-1'">Quality Engineering.</span>
-      <span :class="$vuetify.breakpoint.xs? 'size-20' : 'title-1'">Quality Results.</span>
-      <div class="d-flex mt-5">
-        <LearnBtn 
-          :class="$vuetify.breakpoint.xs? 'top-btn-mob' : 'top-btn'" 
-          class="btn1-color mr-2" 
-          btnText="Learn More"
-        />
-        <LearnBtn 
-          class="top-btn btn2-color" 
-          :class="$vuetify.breakpoint.xs? 'top-btn-mob' : 'top-btn'"
-          btnText="Get Started"
-        />
-      </div>
-    </div> -->
-
     <div :class="$vuetify.breakpoint.xs? 'dash-main-mob' : 'dash-main'">
 
       <div class="home-top d-flex flex-column justify-center align-center">
-        <span class="home-heading mb-3">We provided high-quality coding to create a more intuitive experience.</span>
+        <span class="home-heading mb-3 px-2">We provided high-quality coding to create a more intuitive experience.</span>
         <span :class="$vuetify.breakpoint.xs? 'size-20' : 'title-1'">Quality Engineering.</span>
         <span :class="$vuetify.breakpoint.xs? 'size-20' : 'title-1'">Quality Results.</span>
         <div class="d-flex mt-5">
@@ -488,9 +470,6 @@ export default {
 }
 .home-top{
   width: 100%;
-  /* background: linear-gradient(180deg, rgba(250, 250, 252, 0) 0%, rgba(250, 250, 252, 0) 0.01%, #F0F2F7 100%); */
-  /* height: 300px; */
-  /* background-color: gray; */
 }
 .home-heading{
   font-family: "Josefin Sans";
