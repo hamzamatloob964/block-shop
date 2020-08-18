@@ -70,7 +70,7 @@
       </div>
 
       <div 
-        class="mt-8 px-6 d-flex justify-center align-center"
+        class="mt-8 px-0 px-sm-6 d-flex justify-center align-center"
         :class="$vuetify.breakpoint.xs? 'dashboard-mob' : 'dashboard'"
       >
         <img src="../assets/dashboard.png" class="img-width"/>
