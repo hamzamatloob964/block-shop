@@ -115,7 +115,19 @@
         class="d-flex justify-center" 
         :class="$vuetify.breakpoint.xs? 'rocket-img-mob' : 'rocket-img mb-2'"
       >
-        <img src="../assets/7.png" class="img-width"/>
+        <img src="../assets/rocket.svg" class="img-width"/>
+
+        <span :class="$vuetify.breakpoint.xs? 'rocket-text-mob' : 'rocket-text'">Want to build with us?</span>
+        <div 
+          class="d-flex justify-center align-center on-hover"
+          :class="$vuetify.breakpoint.xs? 'rocket-btn-mob' : 'rocket-btn'"
+        >
+          <span 
+            :class="$vuetify.breakpoint.xs? 'rocket-btn-text-mob' : 'tool-btn-text'"
+          >
+            Connect
+          </span>
+        </div>
       </div>
     </div>
 
@@ -377,5 +389,45 @@ export default {
 } */
 .card-btn:hover{
   -webkit-transform: scale(1.1);
+}
+.rocket-text{
+  position: absolute;
+  top: 147px;
+  font-family: "Alegreya Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 56px;
+  line-height: 61px;
+  letter-spacing: 0.01em;
+  color: #34304E;
+}
+.rocket-text-mob{
+  position: absolute;
+  top: 42px;
+  font-family: "Alegreya Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 61px;
+  letter-spacing: 0.01em;
+  color: #34304E;
+}
+.rocket-btn{
+  position: absolute;
+  width: 120px;
+  height: 38px;
+  bottom: 137px;
+  background: #817FED;
+  border-radius: 48px;
+  cursor: pointer;
+}
+.rocket-btn-mob{
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  bottom: 50px;
+  background: #817FED;
+  border-radius: 48px;
+  cursor: pointer;
 }
 </style>

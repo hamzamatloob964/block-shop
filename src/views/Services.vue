@@ -109,7 +109,20 @@
         class="d-flex justify-center" 
         :class="$vuetify.breakpoint.xs? 'rocket-img-mob' : 'rocket-img mb-2'"
       >
-        <img src="../assets/7.png" class="img-width"/>
+        <img src="../assets/rocket.svg" class="img-width"/>
+      </div>
+
+      <span :class="$vuetify.breakpoint.xs? 'rocket-text-mob' : 'rocket-text'">Want to build with us?</span>
+
+      <div 
+        class="d-flex justify-center align-center on-hover"
+        :class="$vuetify.breakpoint.xs? 'rocket-btn-mob' : 'rocket-btn'"
+      >
+        <span 
+          :class="$vuetify.breakpoint.xs? 'rocket-btn-text-mob' : 'tool-btn-text'"
+        >
+          Connect
+        </span>
       </div>
     </div>
 
@@ -249,7 +262,7 @@ export default {
   border-radius: 48px;
   cursor: pointer;
 }
-.tool-btn-text{
+/* .tool-btn-text{
   font-family: "Josefin Sans";
   font-style: normal;
   font-weight: bold;
@@ -257,7 +270,7 @@ export default {
   line-height: 15px;
   letter-spacing: -0.02em;
   color: #FFFFFF;
-}
+} */
 .tool-btn-text-mob{
   font-family: "Josefin Sans";
   font-style: normal;
@@ -333,4 +346,53 @@ export default {
   line-height: 20px;
   color: #FFFFFF;
 }
+.rocket-text{
+  position: absolute;
+  top: 100px;
+  font-family: "Alegreya Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 56px;
+  line-height: 61px;
+  letter-spacing: 0.01em;
+  color: #34304E;
+}
+.rocket-text-mob{
+  position: absolute;
+  top: 12px;
+  font-family: "Alegreya Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 61px;
+  letter-spacing: 0.01em;
+  color: #34304E;
+}
+.rocket-btn{
+  position: absolute;
+  width: 120px;
+  height: 38px;
+  bottom: 155px;
+  background: #817FED;
+  border-radius: 48px;
+  cursor: pointer;
+}
+.rocket-btn-mob{
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  bottom: 80px;
+  background: #817FED;
+  border-radius: 48px;
+  cursor: pointer;
+}
+/* .rocket-btn-text-mob{
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 8px;
+  line-height: 10px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+} */
 </style>

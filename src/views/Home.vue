@@ -1,7 +1,7 @@
 <template>
   <div class="main mt-6 d-flex flex-column justify-center align-center" :class="$vuetify.breakpoint.xs? 'service-main' : 'full-width'">
 
-    <div class="home-top d-flex flex-column justify-center align-center">
+    <!-- <div class="home-top d-flex flex-column justify-center align-center">
       <span class="home-heading mb-3">We provided high-quality coding to create a more intuitive experience.</span>
       <span :class="$vuetify.breakpoint.xs? 'size-20' : 'title-1'">Quality Engineering.</span>
       <span :class="$vuetify.breakpoint.xs? 'size-20' : 'title-1'">Quality Results.</span>
@@ -17,9 +17,27 @@
           btnText="Get Started"
         />
       </div>
-    </div>
+    </div> -->
 
     <div :class="$vuetify.breakpoint.xs? 'dash-main-mob' : 'dash-main'">
+
+      <div class="home-top d-flex flex-column justify-center align-center">
+        <span class="home-heading mb-3">We provided high-quality coding to create a more intuitive experience.</span>
+        <span :class="$vuetify.breakpoint.xs? 'size-20' : 'title-1'">Quality Engineering.</span>
+        <span :class="$vuetify.breakpoint.xs? 'size-20' : 'title-1'">Quality Results.</span>
+        <div class="d-flex mt-5">
+          <LearnBtn 
+            :class="$vuetify.breakpoint.xs? 'top-btn-mob' : 'top-btn'" 
+            class="btn1-color mr-2" 
+            btnText="Learn More"
+          />
+          <LearnBtn 
+            class="top-btn btn2-color" 
+            :class="$vuetify.breakpoint.xs? 'top-btn-mob' : 'top-btn'"
+            btnText="Get Started"
+          />
+        </div>
+      </div>
 
       <div>
         <div :class="$vuetify.breakpoint.xs? 'intersect-space-mob' : 'intersect-space'"></div>
@@ -65,7 +83,7 @@
             <span class="intersect-btn-text" >Show More</span>
           </div>
 
-          <img src="../assets/home-Intersect .png" class="img-width"/>
+          <img src="../assets/home-Intersect .svg" class="img-width"/>
         </div>
       </div>
 
@@ -174,7 +192,7 @@
     </div>
 
     <div :class="$vuetify.breakpoint.xs? 'slider-intersect-mob' : 'slider-intersect'">
-      <img src="../assets/home-slider-intersect.png" class="img-width"/>
+      <img src="../assets/home-slider-intersect.svg" class="img-width"/>
       <div 
         :class="$vuetify.breakpoint.xs? 'slider-intersect-text-mob' : 'slider-intersect-text'" 
         class="d-flex justify-center align-center"
@@ -236,7 +254,7 @@
 
     <div 
       class="d-flex justify-center align-center"
-      :class="$vuetify.breakpoint.xs? 'proj-list-mob my-10' : 'proj-list my-16 px-16'" 
+      :class="$vuetify.breakpoint.xs? 'proj-list-mob my-10' : 'proj-list my-14 px-16'" 
     >
       <CustVueCarousel/>
       
@@ -260,7 +278,7 @@
         :class="$vuetify.breakpoint.xs? 'absolute-pos-mob' : 'absolute-pos'"
       />
       <img 
-        src="../assets/home-Intersect .png" 
+        src="../assets/home-Intersect .svg" 
         :class="$vuetify.breakpoint.xs? 'home-itersec-mob' : 'comp-img-width'"
       />
 
@@ -342,6 +360,9 @@ export default {
 }
 </script>
 <style scoped>
+.main{
+  background: linear-gradient(180deg, rgba(250, 250, 252, 0) 0%, rgba(250, 250, 252, 0) 0.01%, #F0F2F7 100%);
+}
 .service-main{
   /* width: 450px; */
   width: 100%;
@@ -467,6 +488,7 @@ export default {
 }
 .home-top{
   width: 100%;
+  /* background: linear-gradient(180deg, rgba(250, 250, 252, 0) 0%, rgba(250, 250, 252, 0) 0.01%, #F0F2F7 100%); */
   /* height: 300px; */
   /* background-color: gray; */
 }
@@ -542,19 +564,20 @@ export default {
 }
 .dashboard{
   position: absolute;
-  top: 20px;
+  top: 240px;
   width: 100%;
   height: 700px;
 }
 .dashboard-mob{
   position: absolute;
-  top: 20px;
+  top: 190px;
   width: 100%;
   height: 400px;
 }
 .intersect-main{
   width: 100%;
   height: 650px;
+  /* background: linear-gradient(180deg, #F0F2F7 0%, rgba(250, 250, 252, 0) 100%); */
   /* background-color: blue; */
   position: relative;
 }
@@ -620,7 +643,7 @@ export default {
 .comp-img-width{
   width: 100%;
   height: 100%;
-  /* object-fit: cover; */
+  object-fit: cover;
 }
 .comp-text{
   font-family: "Josefin Sans";
@@ -658,11 +681,13 @@ export default {
 }
 .dash-main{
   position: relative;
-  height: 1400px;
+  /* height: 1400px; */
+  /* background: linear-gradient(180deg, rgba(250, 250, 252, 0) 0%, rgba(250, 250, 252, 0) 0.01%, #F0F2F7 100%); */
 }
 .dash-main-mob{
   position: relative;
-  height: 1700px;
+  /* background: linear-gradient(180deg, rgba(250, 250, 252, 0) 0%, rgba(250, 250, 252, 0) 0.01%, #F0F2F7 100%); */
+  /* height: 1700px; */
 }
 .intersect-main-cont{
   /* position: absolute */
@@ -694,7 +719,7 @@ export default {
 }
 .slider-intersect-bottom-mob{
   position: absolute;
-  top: 60px;
+  top: 40px;
   width: 100%;
 }
 /* .slider-intersect-text-style{
@@ -764,7 +789,7 @@ export default {
 }
 .proj-list{
   width: 100%;
-  height: 350px;
+  height: 370px;
   /* background-color: blue; */
 }
 .proj-list-mob{
@@ -777,7 +802,7 @@ export default {
 .get-touch{
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 600px;
 }
 .get-touch-mob{
   position: relative;
@@ -787,16 +812,17 @@ export default {
 .home-itersec-mob{
   width: 100%;
   height: 400px;
+  object-fit: cover;
 }
 .absolute-pos{
   width: 650px;
   height: 330px;
-  bottom: 30px;
+  bottom: 100px;
   position: absolute;
 }
 .absolute-pos-mob{
   width: 290px;
-  height: 150px;
+  height: 280px;
   bottom: 40px;
   position: absolute;
 }
@@ -805,7 +831,7 @@ export default {
   width: 400px;
   background-color: white;
   border-radius: 35px;
-  bottom: 110px;
+  bottom: 160px;
 }
 .get-form-mob{
   position: absolute;

@@ -8,22 +8,27 @@
     >
       <slide v-for="(item,i) in projImgsArr" :key="i">
         <v-card
-          class="mx-auto rounded-xl my-4 on-hover"
+          class="mx-auto rounded-xl my-6 on-hover card-main"
           max-width="200"
           min-width="200"
           height="300"
         >
           <v-img
-            class="white--text align-end rounded-xl"
-            height="150px"
+            class="white--text align-end rounded-xl pos-absolute"
+            height="170px"
             :src="require(`@/assets/${item.img}`)" 
             alt
           >
           </v-img>
 
-          <v-card-subtitle class="card-title">{{item.text}}</v-card-subtitle>
+          <img 
+            src="../../assets/bg_card.svg" 
+            class="card-bg rounded-xl"
+          />
 
-          <v-card-actions class="card-btn">
+          <v-card-subtitle class="card-title pos-absolute card-sub">{{item.text}}</v-card-subtitle>
+
+          <v-card-actions class="card-btn pos-absolute">
             <v-btn
               color="#69BDD8"
               text
@@ -88,6 +93,8 @@ export default {
 
 <style scoped>
 .caro-size{
+  width: 100%;
+  height: 100%;
   /* width: 1000px; */
 }
 .caro-size-mob{
@@ -96,6 +103,23 @@ export default {
 }
 .see-more:hover{
   -webkit-transform: scale(1.1);
+}
+.card-bg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-main{
+  position: relative;
+}
+.pos-absolute{
+  position: absolute;
+}
+.card-sub{
+  top: 170px;
+}
+.card-btn{
+  bottom: 0px;
 }
 /* .on-hover:hover{
   -webkit-transform: scale(1.1);

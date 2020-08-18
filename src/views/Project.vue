@@ -74,9 +74,21 @@
     <div :class="$vuetify.breakpoint.xs? 'caro-space-mob' : 'caro-space'"></div>
 
     <div 
-      class="d-flex justify-center rocket-img mb-2" 
+      class="d-flex justify-center mb-2" 
+      :class="$vuetify.breakpoint.xs? 'rocket-img-mob' : 'rocket-img'"
     >
-      <img src="../assets/7.png" class="rocket-img"/>
+      <img src="../assets/rocket.svg" class="img-width"/>
+      <span :class="$vuetify.breakpoint.xs? 'rocket-text-mob' : 'rocket-text'">Want to build with us?</span>
+      <div 
+        class="d-flex justify-center align-center on-hover"
+        :class="$vuetify.breakpoint.xs? 'rocket-btn-mob' : 'rocket-btn'"
+      >
+        <span 
+          :class="$vuetify.breakpoint.xs? 'rocket-btn-text-mob' : 'tool-btn-text'"
+        >
+          Connect
+        </span>
+      </div>
     </div>
 
   </div>
@@ -98,8 +110,14 @@ export default {
   width: 450px;
 }
 .rocket-img{
+  position: relative;
   width: 100%;
-  max-height: 430px;
+  height: 450px;
+}
+.rocket-img-mob{
+  position: relative;
+  width: 100%;
+  height: 170px;
 }
 .work-title{
   font-family: "Alegreya Sans";
@@ -241,5 +259,45 @@ export default {
   width: 100%;
   height: 100%;
   background-color: white;
+}
+.rocket-text{
+  position: absolute;
+  top: 155px;
+  font-family: "Alegreya Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 56px;
+  line-height: 61px;
+  letter-spacing: 0.01em;
+  color: #34304E;
+}
+.rocket-text-mob{
+  position: absolute;
+  top: 40px;
+  font-family: "Alegreya Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 61px;
+  letter-spacing: 0.01em;
+  color: #34304E;
+}
+.rocket-btn{
+  position: absolute;
+  width: 120px;
+  height: 38px;
+  bottom: 145px;
+  background: #817FED;
+  border-radius: 48px;
+  cursor: pointer;
+}
+.rocket-btn-mob{
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  bottom: 50px;
+  background: #817FED;
+  border-radius: 48px;
+  cursor: pointer;
 }
 </style>

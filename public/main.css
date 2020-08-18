@@ -48,3 +48,21 @@
    font-weight: bold;
    padding: 5px;
 }
+.tool-btn-text{
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 15px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+.rocket-btn-text-mob{
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 8px;
+  line-height: 10px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}

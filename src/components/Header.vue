@@ -1,23 +1,63 @@
 <template>
-  <div :class="$vuetify.breakpoint.xs? 
-    'header-main-mobile py-6 d-flex flex-column justify-center align-center':
-    'header-main d-flex align-center py-6'"
-  >
-    <div :class="$vuetify.breakpoint.xs? 'mb-4' : 'logo'" @click="onLogoCLick">
-      <span class="berlin-font">blockShop</span>
-    </div>
-    <div :class="$vuetify.breakpoint.xs? 'd-flex justify-center align-center':'menu'">
-      <span
-        v-for="(link,i) in C_links" 
-        :key="link.text" 
-        router 
-        :to="link.route" 
-        class="menu-btn"
-        @click="onClick(link.route,i)"
-        :id="i"
+  <div>
+    <div v-if="$vuetify.breakpoint.xs" class="d-flex my-4 px-4">
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <div class="top-logo" @click="onLogoCLick">
+        <span class="berlin-font">blockShop</span>
+      </div>
+      <v-navigation-drawer
+        v-model="drawer"
+        temporary
+        app
+        
       >
-        {{link.text}}
-      </span>
+        <v-list
+          nav
+          dense
+        >
+          <v-list-item-group
+            v-model="group"
+            active-class="deep-purple--text text--accent-4"
+          >
+            <v-list-item>
+              <v-list-item-title>Foo</v-list-item-title>
+            </v-list-item>
+
+            <v-list-item>
+              <v-list-item-title>Bar</v-list-item-title>
+            </v-list-item>
+
+            <v-list-item>
+              <v-list-item-title>Fizz</v-list-item-title>
+            </v-list-item>
+
+            <v-list-item>
+              <v-list-item-title>Buzz</v-list-item-title>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+      </v-navigation-drawer>
+    </div>
+    <div v-else :class="$vuetify.breakpoint.xs? 
+      'header-main-mobile py-6 d-flex flex-column justify-center align-center':
+      'header-main d-flex align-center py-6'"
+    >
+      <div :class="$vuetify.breakpoint.xs? 'mb-4' : 'logo'" @click="onLogoCLick">
+        <span class="berlin-font">blockShop</span>
+      </div>
+      <div :class="$vuetify.breakpoint.xs? 'd-flex justify-center align-center':'menu'">
+        <span
+          v-for="(link,i) in C_links" 
+          :key="link.text" 
+          router 
+          :to="link.route" 
+          class="menu-btn"
+          @click="onClick(link.route,i)"
+          :id="i"
+        >
+          {{link.text}}
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -31,6 +71,8 @@ export default {
   },
   data () {
     return {
+      drawer: false,
+      group: null,
       C_links: [
         { text:'Services',route:'/services'},
         { text:'About',route:'/about'},
@@ -66,10 +108,18 @@ export default {
     onLogoCLick () {
       this.$router.push('/')
     }
-  }
+  },
+  watch: {
+    group () {
+      this.drawer = false
+    },
+  },
 }
 </script>
 <style scoped>
+.top-logo{
+  margin-left: 90px;
+}
 .header-main{
   min-height: 60px;
   width: 100%;
