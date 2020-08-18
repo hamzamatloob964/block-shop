@@ -1,5 +1,5 @@
 <template>
-  <v-container :class="$vuetify.breakpoint.xs && 'no-padding'">
+  <v-container :class="$vuetify.breakpoint.xs && 'no-padding'" class="main-cont">
     <v-app>
       <router-view />
     </v-app>
@@ -20,6 +20,9 @@ export default {
 };
 </script>
 <style>
+.main-cont{
+  background: linear-gradient(180deg, rgba(250, 250, 252, 0) 0%, rgba(250, 250, 252, 0) 0.01%, #F0F2F7 100%);
+}
   /* @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap'); */
 @font-face {
   font-family: "Alegreya Sans";

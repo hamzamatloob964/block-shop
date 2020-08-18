@@ -1,14 +1,14 @@
 <template>
-  <div 
-    class="d-flex flex-column align-center justify-center pa-4 mt-4"
+  <div
+    class="d-flex flex-column align-center justify-center pa-6 "
     :class="$vuetify.breakpoint.xs? 'footer-main-mobile' : 'footer-main'"
   >
     <div class="menu">
       <span
-        v-for="(link,i) in C_links" 
-        :key="link.text" 
-        router 
-        :to="link.route" 
+        v-for="(link,i) in C_links"
+        :key="link.text"
+        router
+        :to="link.route"
         :class="$vuetify.breakpoint.xs? 'menu-btn' : 'menu-btn'"
         @click="onClick(link.route,i)"
         :id="i"
@@ -35,21 +35,6 @@
       <v-btn outlined fab color="indigo" class="mr-4 btn-hover">
         <img src="../assets/youtube.png" />
       </v-btn>
-      <!-- <div class="icon">
-        <img src="../assets/Group79.png" class="img-width"/>
-      </div>
-      <div class="icon">
-        <img src="../assets/Group80.png" class="img-width"/>
-      </div>
-      <div class="icon">
-        <img src="../assets/Group81.png" class="img-width"/>
-      </div>
-      <div class="icon">
-        <img src="../assets/Group82.png" class="img-width"/>
-      </div>
-      <div class="icon">
-        <img src="../assets/Group83.png" class="img-width"/>
-      </div> -->
     </div>
     <div class="terms mb-6"><span class="mr-4">© 2010-2020</span>  Privacy — Terms</div>
   </div>
@@ -98,13 +83,14 @@ export default {
 .footer-main{
   min-height: 240px;
   width: 100%;
-  background: linear-gradient(180deg, rgba(250, 250, 252, 0) 0%, #F0F2F7 100%), #FFFFFF;
+  background-color: #f1f2f8;
+  /* background: linear-gradient(180deg, rgba(250, 250, 252, 0) 0%, #F0F2F7 100%), #FFFFFF; */
   /* background-color: blue; */
 }
 .footer-main-mobile{
   min-height: 240px;
   /* width: 450px; */
-  background: linear-gradient(180deg, rgba(250, 250, 252, 0) 0%, #F0F2F7 100%), #FFFFFF;
+  /* background: linear-gradient(180deg, rgba(250, 250, 252, 0) 0%, #F0F2F7 100%), #FFFFFF; */
   /* background-color: blue; */
 }
 .menu{

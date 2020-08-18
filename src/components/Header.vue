@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="$vuetify.breakpoint.xs" class="d-flex my-4 px-4">
+    <div v-if="$vuetify.breakpoint.xs" class="d-flex align-center my-4 px-4">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <div class="top-logo" @click="onLogoCLick">
         <span class="berlin-font">blockShop</span>
@@ -9,30 +9,24 @@
         v-model="drawer"
         temporary
         app
-        
       >
         <v-list
           nav
           dense
         >
+          <div class="pa-2" @click="onLogoCLick">
+            <span class="berlin-font">blockShop</span>
+          </div>
+          <v-divider class="my-2 divider" ></v-divider>
           <v-list-item-group
             v-model="group"
-            active-class="deep-purple--text text--accent-4"
           >
-            <v-list-item>
-              <v-list-item-title>Foo</v-list-item-title>
-            </v-list-item>
-
-            <v-list-item>
-              <v-list-item-title>Bar</v-list-item-title>
-            </v-list-item>
-
-            <v-list-item>
-              <v-list-item-title>Fizz</v-list-item-title>
-            </v-list-item>
-
-            <v-list-item>
-              <v-list-item-title>Buzz</v-list-item-title>
+            <v-list-item
+              v-for="(link,i) in C_links" 
+              :key="link.text" 
+              @click="onClick(link.route,i)"
+            >
+              <v-list-item-title>{{link.text}}</v-list-item-title>
             </v-list-item>
           </v-list-item-group>
         </v-list>
@@ -197,5 +191,9 @@ span:hover::after {
 }
 .navbar:hover::after {
   width: 100%;
+}
+.divider{
+  width: 100%;
+  height: 10px;
 }
 </style>
