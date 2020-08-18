@@ -547,6 +547,11 @@ export default {
   width: 100%;
   height: 700px;
 }
+@media only screen and ( min-width: 1900px ) {
+  .dashboard img {
+    object-fit: contain;
+  }
+}
 .dashboard-mob{
   position: absolute;
   top: 190px;
