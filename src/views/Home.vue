@@ -589,6 +589,7 @@ export default {
   height: 48px;
   background: #78A9F0;
   border-radius: 48px;
+  transition: all 0.25s;
 }
 .intersect-bottom{
   bottom: 80px;
@@ -604,6 +605,9 @@ export default {
   line-height: 15px;
   letter-spacing: -0.02em;
   color: #FFFFFF;
+}
+.intersect-btn {
+  transition: all 0.25s;
 }
 .intersect-btn:hover{
   -webkit-transform: scale(1.2);

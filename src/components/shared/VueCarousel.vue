@@ -103,6 +103,9 @@ export default {
   width: 250px;
   height: 350px;
 }
+.see-more {
+  transition: all 0.25s;
+}
 .see-more:hover{
   -webkit-transform: scale(1.1);
 }

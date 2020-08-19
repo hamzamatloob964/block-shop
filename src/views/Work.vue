@@ -354,6 +354,7 @@ export default {
 }
 .card-btn{
   bottom: 0px;
+  transition: all 0.25s;
 }
 .card-btn:hover{
   -webkit-transform: scale(1.1);
