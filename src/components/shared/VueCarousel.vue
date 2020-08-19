@@ -26,7 +26,9 @@
             class="card-bg rounded-xl"
           />
 
-          <v-card-subtitle class="card-title pos-absolute card-sub">{{item.text}}</v-card-subtitle>
+          <v-card-subtitle class="card-title pos-absolute card-sub">
+            {{item.text}}
+          </v-card-subtitle>
 
           <v-card-actions class="card-btn pos-absolute">
             <v-btn
@@ -51,6 +53,7 @@
 <script>
 import { Carousel, Slide } from 'vue-carousel';
 import '../../../public/main.css'
+
 export default {
   name: 'vue-carousel',
   components: {
@@ -95,7 +98,6 @@ export default {
 .caro-size{
   width: 100%;
   height: 100%;
-  /* width: 1000px; */
 }
 .caro-size-mob{
   width: 250px;
@@ -121,7 +123,4 @@ export default {
 .card-btn{
   bottom: 0px;
 }
-/* .on-hover:hover{
-  -webkit-transform: scale(1.1);
-} */
 </style>

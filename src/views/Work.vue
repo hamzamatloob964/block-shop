@@ -19,29 +19,30 @@
 
     <div class="projects d-flex justify-center align-center flex-wrap my-10">
       <v-card
-        class="mx-auto rounded-xl ma-5 on-hover"
+        class="mx-auto rounded-xl ma-5 on-hover card-main"
         max-width="200"
         min-width="200"
         height="300"
         v-for="(item,i) in projImgsArr" :key="i"
       >
         <v-img
-          class="white--text align-end rounded-xl"
-          height="150px"
+          class="white--text align-end rounded-xl pos-absolute"
+          height="170px"
           :src="require(`@/assets/${item.img}`)" 
           alt
         >
         </v-img>
 
-        <v-card-subtitle class="card-title">{{item.text}}</v-card-subtitle>
+        <img 
+          src="../assets/bg_card.svg" 
+          class="card-bg rounded-xl"
+        />
 
-        <!-- <v-card-text class="text--primary">
-          <div>Whitehaven Beach</div>
+        <v-card-subtitle class="card-title pos-absolute card-sub">
+          {{item.text}}
+        </v-card-subtitle>
 
-          <div>Whitsunday Island, Whitsunday Islands</div>
-        </v-card-text> -->
-
-        <v-card-actions class="card-btn">
+        <v-card-actions class="card-btn pos-absolute">
           <v-btn
             color="#69BDD8"
             text
@@ -64,7 +65,7 @@
     >
       <div :class="$vuetify.breakpoint.xs? 'work-intersect-mob' : 'work-intersect'">
         <img 
-          src="../assets/WorkIntersect.png" 
+          src="../assets/home-Intersect .svg" 
           :class="$vuetify.breakpoint.xs? 'work-intersect-mob' : 'work-intersect'"
         />
       </div>
@@ -75,9 +76,6 @@
         <span :class="$vuetify.breakpoint.xs? 'curve-title-mob mb-3' : 'curve-title mb-3'">
           Project Highlights
         </span>
-        <!-- <span :class="$vuetify.breakpoint.xs? 'curve-text-mob' : 'curve-text'">
-          At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat
-        </span> -->
       </div>
       <div :class="$vuetify.breakpoint.xs? 'carousel-main-mob' : 'carousel-main'">
         <Carousel3d 
@@ -99,14 +97,6 @@
       </div>
     </div>
 
-    <!-- <div 
-      class="d-flex justify-center rocket-img mb-2" 
-    >
-      <img src="../assets/7.png" class="rocket-img"/>
-    </div>
-
-    <div :class="$vuetify.breakpoint.xs? 'caro-space-mob' : 'caro-space'"></div> -->
-
     <div 
       class="d-flex justify-center" 
       :class="$vuetify.breakpoint.xs? 'rocket-img-cont-mob' : 'rocket-img-cont mb-2'"
@@ -117,7 +107,9 @@
       >
         <img src="../assets/rocket.svg" class="img-width"/>
 
-        <span :class="$vuetify.breakpoint.xs? 'rocket-text-mob' : 'rocket-text'">Want to build with us?</span>
+        <span :class="$vuetify.breakpoint.xs? 'rocket-text-mob' : 'rocket-text'">
+          Want to build with us?
+        </span>
         <div 
           class="d-flex justify-center align-center on-hover"
           :class="$vuetify.breakpoint.xs? 'rocket-btn-mob' : 'rocket-btn'"
@@ -190,7 +182,6 @@ export default {
 </script>
 <style scoped>
 .work-main{
-  /* width: 450px; */
   width: 100%;
 }
 .work-title{
@@ -229,10 +220,12 @@ export default {
 .work-intersect{
   width: 100%;
   height: 600px;
+  object-fit: cover;
 }
 .work-intersect-mob{
   width: 100%;
   height: 300px;
+  object-fit: cover;
 }
 .work-intersect-white{
   width: 100%;
@@ -359,30 +352,9 @@ export default {
   width: 100%;
   padding: 0px 120px 0px 120px;
 }
-/* .card-title{
-  font-family: "Josefin Sans";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 140%;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #34304E;
-  padding: 20px 16px 0px 16px !important;
-} */
-/* .see-more{
-  font-family: "Josefin Sans";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 140%;
-  letter-spacing: -0.035em;
-  color: #69BDD8;
-} */
-/* .card-btn{
-  position: absolute;
-  bottom: 10px;
-} */
+.card-btn{
+  bottom: 0px;
+}
 .card-btn:hover{
   -webkit-transform: scale(1.1);
 }
@@ -425,5 +397,19 @@ export default {
   background: #817FED;
   border-radius: 48px;
   cursor: pointer;
+}
+.pos-absolute{
+  position: absolute;
+}
+.card-main{
+  position: relative;
+}
+.card-bg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-sub{
+  top: 170px;
 }
 </style>

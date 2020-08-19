@@ -14,12 +14,13 @@
           nav
           dense
         >
-          <div class="pa-2" @click="onLogoCLick">
+          <div class="pa-2 d-flex justify-center align-center" @click="onLogoCLick">
             <span class="berlin-font">blockShop</span>
           </div>
           <v-divider class="my-2 divider" ></v-divider>
           <v-list-item-group
             v-model="group"
+            class="d-flex flex-column justify-center align-center"
           >
             <v-list-item
               v-for="(link,i) in C_links" 
@@ -95,7 +96,6 @@ export default {
       let addEle = document.getElementById(id);
       this.index = id
       addEle.classList.add("navbar");
-      //document.getElementById(id).setAttribute("class", "navbar");
       this.$router.push(url)
       this.updateIndex(id)
     },
@@ -122,7 +122,6 @@ export default {
 }
 .header-main-mobile{
   min-height: 60px;
-  /* width: 450px; */
   background-color: white;
 }
 .menu{
@@ -175,11 +174,6 @@ span:hover::after {
   font-size: 21px;
   line-height: 24px;
 }
-/* .navbar{
-  -webkit-transform: scale(1.2);
-   font-weight: bold;
-   padding: 5px;
-} */
 .navbar::after {
   background-color: #69BDD8;
   content: "";

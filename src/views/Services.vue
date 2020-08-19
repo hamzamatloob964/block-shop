@@ -1,5 +1,8 @@
 <template>
-  <div class="main mt-6 d-flex flex-column justify-center align-center" :class="$vuetify.breakpoint.xs? 'service-main' : 'full-width'">
+  <div 
+    class="main mt-6 d-flex flex-column justify-center align-center" 
+    :class="$vuetify.breakpoint.xs? 'service-main' : 'full-width'"
+  >
     <div class="img d-flex justify-center">
       <img src="../assets/Group1.png" class="img-width"/>
       <div class="title d-flex flex-column justify-center align-center mt-4">
@@ -72,11 +75,19 @@
       <LearnBtn class="btn-size" btnText="Learn"/>
     </div>
 
-    <div :class="$vuetify.breakpoint.xs? 'tool-img-mob' : 'tool-img'" class="d-flex justify-center mb-2">
-      <img src="../assets/WorkIntersect.png" class="img-width"/>
-      <span :class="$vuetify.breakpoint.xs? 'ser-intersec-text-mob' : 'ser-intersec-text'">Technologies</span>
+    <div 
+      :class="$vuetify.breakpoint.xs? 'tool-img-mob' : 'tool-img'" 
+      class="d-flex justify-center mb-2 pos-relative"
+    >
+      <img src="../assets/home-Intersect .svg" class="img-width"/>
+      <span 
+        :class="$vuetify.breakpoint.xs? 'ser-intersec-text-mob' : 'ser-intersec-text'"
+        class="ser-intersec-text-univ pos-absolute"
+      >
+        Technologies
+      </span>
       <div 
-        class="d-flex justify-center align-center flex-wrap"
+        class="d-flex justify-center align-center flex-wrap pos-absolute"
         :class="$vuetify.breakpoint.xs? 'tech-main-mob' : 'tech-main'"
       >
         <div 
@@ -85,12 +96,20 @@
           class="d-flex flex-column justify-center align-center ma-5"
           :class="$vuetify.breakpoint.xs? 'tech-div-mob' : 'tech-div'"
         >
-          <img :src="require(`@/assets/${item.img}`)" :class="$vuetify.breakpoint.xs? 'tech-div-mob' : 'tech-div'"/>
-          <span :class="$vuetify.breakpoint.xs? 'img-text-mob mt-2' : 'img-text mt-4'" >{{item.text}}</span>
+          <img 
+            :src="require(`@/assets/${item.img}`)" 
+            :class="$vuetify.breakpoint.xs? 'tech-div-mob' : 'tech-div'"
+          />
+          <span 
+            :class="$vuetify.breakpoint.xs? 'img-text-mob mt-2' : 'img-text mt-4'" 
+            class="img-text-univ"
+          >
+            {{item.text}}
+          </span>
         </div>
       </div>
       <div 
-        class="d-flex justify-center align-center"
+        class="d-flex justify-center align-center tool-btn-univ on-hover"
         :class="$vuetify.breakpoint.xs? 'tool-btn-mob' : 'tool-btn'"
       >
         <span 
@@ -102,20 +121,25 @@
     </div>
 
     <div 
-      class="d-flex justify-center" 
+      class="d-flex justify-center pos-relative" 
       :class="$vuetify.breakpoint.xs? 'rocket-img-cont-mob' : 'rocket-img-cont mb-2'"
     >
       <div 
-        class="d-flex justify-center" 
+        class="d-flex justify-center pos-absolute" 
         :class="$vuetify.breakpoint.xs? 'rocket-img-mob' : 'rocket-img mb-2'"
       >
         <img src="../assets/rocket.svg" class="img-width"/>
       </div>
 
-      <span :class="$vuetify.breakpoint.xs? 'rocket-text-mob' : 'rocket-text'">Want to build with us?</span>
+      <span 
+        :class="$vuetify.breakpoint.xs? 'rocket-text-mob' : 'rocket-text'"
+        class="rocket-text-univ"
+      >
+        Want to build with us?
+      </span>
 
       <div 
-        class="d-flex justify-center align-center on-hover"
+        class="d-flex justify-center align-center on-hover rocket-btn-univ"
         :class="$vuetify.breakpoint.xs? 'rocket-btn-mob' : 'rocket-btn'"
       >
         <span 
@@ -155,7 +179,6 @@ export default {
 </script>
 <style scoped>
 .service-main{
-  /* width: 450px; */
   width: 100%;
 }
 .img{
@@ -163,40 +186,32 @@ export default {
   height: 400px;
 }
 .tool-img{
-  position: relative;
   width: 100%;
   height: 700px;
 }
 .tool-img-mob{
-  position: relative;
   width: 100%;
   height: 450px;
 }
 .rocket-img{
-  position: absolute;
   width: 100%;
   object-fit: cover;
   height: 430px;
   bottom: 10px;
 }
 .rocket-img-mob{
-  position: absolute;
   width: 100%;
   object-fit: cover;
   height: 170px;
   bottom: 30px;
 }
 .rocket-img-cont{
-  position: relative;
   width: 100%;
   height: 400px;
-  background-color: white;
 }
 .rocket-img-cont-mob{
-  position: relative;
   width: 100%;
   height: 170px;
-  background-color: white;
 }
 .title{
   position: absolute;
@@ -204,12 +219,6 @@ export default {
 .size-12{
   font-size: 12px;
 }
-/* .size-20{
-  font-family: "Alegreya Sans";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-} */
 .size-56{
   font-family: "Alegreya Sans";
   font-style: normal;
@@ -245,32 +254,21 @@ export default {
   color: #ABA7BF;
 }
 .tool-btn{
-  position: absolute;
   width: 161px;
   height: 48px;
   bottom: 50px;
-  background: #78A9F0;
-  border-radius: 48px;
-  cursor: pointer;
 }
 .tool-btn-mob{
-  position: absolute;
   width: 100px;
   height: 30px;
   bottom: 25px;
+}
+.tool-btn-univ{
+  position: absolute;
   background: #78A9F0;
   border-radius: 48px;
   cursor: pointer;
 }
-/* .tool-btn-text{
-  font-family: "Josefin Sans";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 15px;
-  letter-spacing: -0.02em;
-  color: #FFFFFF;
-} */
 .tool-btn-text-mob{
   font-family: "Josefin Sans";
   font-style: normal;
@@ -289,35 +287,27 @@ export default {
   font-weight: bold;
 }
 .ser-intersec-text{
-  position: absolute;
-  font-family: "Alegreya Sans";
-  font-style: normal;
-  font-weight: bold;
   font-size: 56px;
-  line-height: 61px;
-  letter-spacing: 0.01em;
-  color: #FFFFFF;
   top: 90px;
 }
 .ser-intersec-text-mob{
-  position: absolute;
+  font-size: 24px;
+  top: 10px;
+}
+.ser-intersec-text-univ{
   font-family: "Alegreya Sans";
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
   line-height: 61px;
   letter-spacing: 0.01em;
   color: #FFFFFF;
-  top: 10px;
 }
 .tech-main{
-  position: absolute;
   width: 700px;
   height: 380px;
   bottom: 130px;
 }
 .tech-main-mob{
-  position: absolute;
   width: 300px;
   height: 280px;
   bottom: 90px;
@@ -331,68 +321,48 @@ export default {
   height: 50px;
 }
 .img-text{
-  font-family: "Josefin Sans";
-  font-style: normal;
-  font-weight: bold;
   font-size: 20px;
-  line-height: 20px;
-  color: #FFFFFF;
 }
 .img-text-mob{
+  font-size: 12px;
+}
+.img-text-univ{
   font-family: "Josefin Sans";
   font-style: normal;
   font-weight: bold;
-  font-size: 12px;
   line-height: 20px;
   color: #FFFFFF;
 }
 .rocket-text{
-  position: absolute;
   top: 100px;
-  font-family: "Alegreya Sans";
-  font-style: normal;
-  font-weight: bold;
   font-size: 56px;
-  line-height: 61px;
-  letter-spacing: 0.01em;
-  color: #34304E;
 }
 .rocket-text-mob{
-  position: absolute;
   top: 12px;
+  font-size: 20px;
+}
+.rocket-text-univ{
   font-family: "Alegreya Sans";
   font-style: normal;
   font-weight: bold;
-  font-size: 20px;
   line-height: 61px;
   letter-spacing: 0.01em;
   color: #34304E;
 }
 .rocket-btn{
-  position: absolute;
   width: 120px;
   height: 38px;
   bottom: 155px;
-  background: #817FED;
-  border-radius: 48px;
-  cursor: pointer;
 }
 .rocket-btn-mob{
-  position: absolute;
   width: 50px;
   height: 20px;
   bottom: 80px;
+}
+.rocket-btn-univ{
+  position: absolute;
   background: #817FED;
   border-radius: 48px;
   cursor: pointer;
 }
-/* .rocket-btn-text-mob{
-  font-family: "Josefin Sans";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 8px;
-  line-height: 10px;
-  letter-spacing: -0.02em;
-  color: #FFFFFF;
-} */
 </style>

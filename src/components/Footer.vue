@@ -1,6 +1,6 @@
 <template>
   <div
-    class="d-flex flex-column align-center justify-center pa-6 "
+    class="d-flex flex-column align-center justify-center"
     :class="$vuetify.breakpoint.xs? 'footer-main-mobile' : 'footer-main'"
   >
     <div class="menu">
@@ -20,19 +20,19 @@
     <v-divider class="my-7 divider" ></v-divider>
 
     <div class="social-icon-main d-flex align-center justify-center">
-      <v-btn outlined fab color="indigo" class="mr-4 btn-hover">
+      <v-btn outlined fab color="indigo" class="ma-2 btn-hover">
         <img src="../assets/messangerSvg.svg" />
       </v-btn>
-      <v-btn outlined fab color="indigo" class="mr-4 btn-hover">
+      <v-btn outlined fab color="indigo" class="ma-2 btn-hover">
         <img src="../assets/instagram.png" />
       </v-btn>
-      <v-btn outlined fab color="indigo" class="mr-4 btn-hover">
+      <v-btn outlined fab color="indigo" class="ma-2 btn-hover">
         <img src="../assets/fb.png" />
       </v-btn>
-      <v-btn outlined fab color="indigo" class="mr-4 btn-hover">
+      <v-btn outlined fab color="indigo" class="ma-2 btn-hover">
         <img src="../assets/twitter.png" />
       </v-btn>
-      <v-btn outlined fab color="indigo" class="mr-4 btn-hover">
+      <v-btn outlined fab color="indigo" class="ma-2 btn-hover">
         <img src="../assets/youtube.png" />
       </v-btn>
     </div>
@@ -84,14 +84,9 @@ export default {
   min-height: 240px;
   width: 100%;
   background-color: #f1f2f8;
-  /* background: linear-gradient(180deg, rgba(250, 250, 252, 0) 0%, #F0F2F7 100%), #FFFFFF; */
-  /* background-color: blue; */
 }
 .footer-main-mobile{
   min-height: 240px;
-  /* width: 450px; */
-  /* background: linear-gradient(180deg, rgba(250, 250, 252, 0) 0%, #F0F2F7 100%), #FFFFFF; */
-  /* background-color: blue; */
 }
 .menu{
   display: flex;

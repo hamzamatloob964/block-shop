@@ -41,15 +41,6 @@ body{
   src: local("Josefin Sans"),
   url(./fonts/Josefin_Sans/static/JosefinSans-Regular.ttf) format("truetype");
 }
-/* @font-face {
-  font-family: "Berlin Sans FB Demi";
-  src: local("Berlin Sans FB Demi"),
-  url(./fonts/Berlin_Sans_FB_Demi_Bold/BerlinSansFBDemiBold.ttf) format("truetype");
-} */
-.main{
-  /* max-width: 550px !important;
-  height: 100%; */
-}
 .no-padding {
   padding: 0px !important;
 }
