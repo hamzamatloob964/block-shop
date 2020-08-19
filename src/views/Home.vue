@@ -35,6 +35,9 @@
           class="pos-relative" 
           :class="$vuetify.breakpoint.xs? 'intersect-space-mob' : 'intersect-space'"
         >
+          <div class="mb-n10" style="position: relative; z-index: 1">
+            <img src="../assets/dashboard.png" class="img-width"/>
+          </div>
         </div>
         <div 
           class="d-flex flex-column justify-center align-center pos-relative"
@@ -89,12 +92,12 @@
         </div>
       </div>
 
-      <div 
+      <!-- <div 
         class="mt-8 px-0 px-sm-6 d-flex justify-center align-center pos-absolute"
         :class="$vuetify.breakpoint.xs? 'dashboard-mob' : 'dashboard'"
       >
         <img src="../assets/dashboard.png" class="img-width"/>
-      </div>
+      </div> -->
     </div>
 
 
@@ -528,11 +531,13 @@ export default {
 }
 .intersect-space{
   width: 100%;
-  height: 700px;
+  margin-top: 40px;
+  /* height: 700px; */
 }
 .intersect-space-mob{
   width: 100%;
-  height: 430px;
+  margin-top: 40px;
+  /* height: 430px; */
 }
 .intersect-text{
   width: 100%;
