@@ -6,13 +6,17 @@
     <div class="mb-2">
       <span 
         :class="$vuetify.breakpoint.xs? 'work-title-mob' : 'work-title'"
+        class="work-title-univ"
       >
         Case Studies
       </span>
     </div>
 
     <div class="d-flex justify-center align-center">
-      <span :class="$vuetify.breakpoint.xs? 'work-sub-title-mob' : 'work-sub-title'">
+      <span 
+        :class="$vuetify.breakpoint.xs? 'work-sub-title-mob' : 'work-sub-title'"
+        class="work-sub-title-univ"
+      >
         Subheader here lorem ipsum
       </span>
     </div>
@@ -51,8 +55,7 @@
             <span class="see-more">See more</span>
             <img 
               src="../assets/arrow.png" 
-              class="ml-2 mb-1"
-              :class="$vuetify.breakpoint.xs? 'img-width' : 'img-width'"
+              class="ml-2 mb-1 img-width"
             />
           </v-btn>
         </v-card-actions>
@@ -60,7 +63,7 @@
     </div>
 
     <div 
-      class="d-flex justify-center align-center" 
+      class="d-flex justify-center align-center pos-relative" 
       :class="$vuetify.breakpoint.xs? 'main-img-mob' : 'main-img'"
     >
       <div :class="$vuetify.breakpoint.xs? 'work-intersect-mob' : 'work-intersect'">
@@ -70,14 +73,20 @@
         />
       </div>
       <div 
-        class="d-flex flex-column justify-center align-center curve-main"
+        class="d-flex flex-column justify-center align-center pos-absolute"
         :class="$vuetify.breakpoint.xs? 'curve-main-mob' : 'curve-main'"
       >
-        <span :class="$vuetify.breakpoint.xs? 'curve-title-mob mb-3' : 'curve-title mb-3'">
+        <span  
+          :class="$vuetify.breakpoint.xs? 'curve-title-mob mb-3' : 'curve-title mb-3'"
+          class="curve-title-univ"
+        >
           Project Highlights
         </span>
       </div>
-      <div :class="$vuetify.breakpoint.xs? 'carousel-main-mob' : 'carousel-main'">
+      <div 
+        :class="$vuetify.breakpoint.xs? 'carousel-main-mob' : 'carousel-main'"
+        class="pos-absolute"
+      >
         <Carousel3d 
           controlsVisible 
           :width="$vuetify.breakpoint.xs? 180:390"
@@ -90,7 +99,7 @@
           <Slide class="caro-slide" v-for="(item,i) in [1,2,3,4,5,6]" :key="i" :index="i">
             <img 
               src="../assets/workCarouselImg.png" 
-              :class="$vuetify.breakpoint.xs? 'slider-img' : 'slider-img'"
+              class="slider-img"
             />
           </Slide>
         </Carousel3d>
@@ -98,7 +107,7 @@
     </div>
 
     <div 
-      class="d-flex justify-center" 
+      class="d-flex justify-center pos-relative" 
       :class="$vuetify.breakpoint.xs? 'rocket-img-cont-mob' : 'rocket-img-cont mb-2'"
     >
       <div 
@@ -107,11 +116,14 @@
       >
         <img src="../assets/rocket.svg" class="img-width"/>
 
-        <span :class="$vuetify.breakpoint.xs? 'rocket-text-mob' : 'rocket-text'">
+        <span 
+          :class="$vuetify.breakpoint.xs? 'rocket-text-mob' : 'rocket-text'"
+          class="rocket-text-univ"
+        >
           Want to build with us?
         </span>
         <div 
-          class="d-flex justify-center align-center on-hover"
+          class="d-flex justify-center align-center on-hover rocket-btn-univ"
           :class="$vuetify.breakpoint.xs? 'rocket-btn-mob' : 'rocket-btn'"
         >
           <span 
@@ -185,35 +197,29 @@ export default {
   width: 100%;
 }
 .work-title{
-  font-family: "Alegreya Sans";
-  font-style: normal;
-  font-weight: bold;
   font-size: 56px;
   line-height: 67px;
-  color: #34304E;
 }
 .work-title-mob{
+  font-size: 20px;
+}
+.work-title-univ{
   font-family: "Alegreya Sans";
   font-style: normal;
   font-weight: bold;
-  font-size: 20px;
   color: #34304E;
 }
 .work-sub-title{
-  font-family: "Josefin Sans";
-  font-style: normal;
-  font-weight: 600;
   font-size: 16px;
   line-height: 16px;
-  text-align: center;
-  letter-spacing: -0.035em;
-  color: #34304E;
 }
 .work-sub-title-mob{
+  font-size: 14px;
+}
+.work-sub-title-univ{
   font-family: "Josefin Sans";
   font-style: normal;
   font-weight: 600;
-  font-size: 14px;
   letter-spacing: -0.035em;
   color: #34304E;
 }
@@ -241,38 +247,31 @@ export default {
   height: 300px;
 }
 .main-img{
-  position: relative;
   width: 100%;
 }
 .main-img-mob{
-  position: relative;
   width: 100%;
   height: 320px;
 }
 .curve-title{
-  font-family: "Alegreya Sans";
-  font-style: normal;
-  font-weight: bold;
   font-size: 56px;
   line-height: 97.25%;
-  letter-spacing: 0.01em;
-  color: #FFFFFF;
 }
 .curve-title-mob{
+  font-size: 20px;
+}
+.curve-title-univ{
   font-family: "Alegreya Sans";
   font-style: normal;
   font-weight: bold;
-  font-size: 20px;
   letter-spacing: 0.01em;
   color: #FFFFFF;
 }
 .curve-main{
-  position: absolute;
   width: 800px;
   top: 80px;
 }
 .curve-main-mob{
-  position: absolute;
   width: 400px;
   top: 50px;
 }
@@ -294,13 +293,11 @@ export default {
   color: #FFFFFF;
 }
 .carousel-main{
-  position: absolute;
   width: 800px;
   height: 320px;
   bottom: 95px;
 }
 .carousel-main-mob{
-  position: absolute;
   width: 320px;
   height: 190px;
   bottom: 40px;
@@ -324,12 +321,10 @@ export default {
   background-color: white;
 }
 .rocket-img-cont{
-  position: relative;
   width: 100%;
   height: 340px;
 }
 .rocket-img-cont-mob{
-  position: relative;
   width: 100%;
   height: 120px;
   background-color: white;
@@ -359,41 +354,34 @@ export default {
   -webkit-transform: scale(1.1);
 }
 .rocket-text{
-  position: absolute;
   top: 147px;
-  font-family: "Alegreya Sans";
-  font-style: normal;
-  font-weight: bold;
   font-size: 56px;
-  line-height: 61px;
-  letter-spacing: 0.01em;
-  color: #34304E;
 }
 .rocket-text-mob{
-  position: absolute;
   top: 42px;
+  font-size: 20px;
+}
+.rocket-text-univ{
+  position: absolute;
   font-family: "Alegreya Sans";
   font-style: normal;
   font-weight: bold;
-  font-size: 20px;
   line-height: 61px;
   letter-spacing: 0.01em;
   color: #34304E;
 }
 .rocket-btn{
-  position: absolute;
   width: 120px;
   height: 38px;
   bottom: 137px;
-  background: #817FED;
-  border-radius: 48px;
-  cursor: pointer;
 }
 .rocket-btn-mob{
-  position: absolute;
   width: 50px;
   height: 20px;
   bottom: 50px;
+}
+.rocket-btn-univ{
+  position: absolute;
   background: #817FED;
   border-radius: 48px;
   cursor: pointer;
