@@ -40,6 +40,9 @@
   letter-spacing: -0.035em;
   color: #69BDD8;
 }
+.on-hover {
+  transition: all 0.25s !important;
+}
 .on-hover:hover{
   -webkit-transform: scale(1.1);
 }

@@ -144,6 +144,7 @@ export default {
   color: #34304E;
   padding: 10px;
   cursor: pointer;
+  transition: all 0.25s;
 }
 .menu-btn:hover {
    -webkit-transform: scale(1.2);

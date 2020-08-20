@@ -15,6 +15,7 @@ export default {
 <style scoped>
 .learn-btn{
   border-radius: 48px; 
+  transition: all 0.25s;
 }
 .learn-btn:hover{
   -webkit-transform: scale(1.1);
